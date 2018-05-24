@@ -32,6 +32,8 @@
         <!-- org.springframework.cloud:spring-cloud-dependencies -->
 
         <!-- third party -->
+        <mybatis-spring-boot-starter.version>N/A</mybatis-spring-boot-starter.version>
+
         <zkclient.version>0.10</zkclient.version>
         <auto-value.version>1.5</auto-value.version>
         <beetl.version>2.2.7</beetl.version>
@@ -84,6 +86,11 @@
                 <spring-io-platform.version>Cairo-SR1</spring-io-platform.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
                 <spring-cloud.version>Finchley.RC1</spring-cloud.version>
+                <spring-mobile.version>1.1.5.RELEASE</spring-mobile.version>
+                <spring-integration.version>5.0.5.RELEASE</spring-integration.version>
+                <spring-integration-kafka.version>3.0.3.RELEASE</spring-integration-kafka.version>
+                <spring-session.version>Apple-SR2</spring-session.version>
+                <spring-statemachine.version>2.0.1.RELEASE</spring-statemachine.version>
             </properties>
             <dependencyManagement>
                 <dependencies>
@@ -139,6 +146,36 @@
                             <exclusion><groupId>ch.qos.logback</groupId><artifactId>logback-classic</artifactId></exclusion>
                         </exclusions>
                     </dependency>
+
+                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-mobile</artifactId><version>${spring-boot.version}</version></dependency>
+                    <dependency><groupId>org.springframework.mobile</groupId><artifactId>spring-mobile-device</artifactId><version>${spring-mobile.version}</version></dependency>
+
+                    <dependency><groupId>org.springframework.integration</groupId><artifactId>spring-integration -bom</artifactId><version>${spring-integration.version}</version></dependency>
+                    <dependency><groupId>org.springframework.integration</groupId><artifactId>spring-integration-kafka</artifactId><version>${spring-integration-kafka.version}</version></dependency>
+                    <!--
+                    org.springframework.integration:spring-integration-java-dsl
+                    org.springframework.integration:spring-integration-aws
+                    org.springframework.integration:spring-integration-smb
+                    org.springframework.integration:spring-integration-zip
+                    org.springframework.integration:org.springframework.integration.event
+                    org.springframework.integration:spring-integration-hazelcast
+                    -->
+                    <dependency><groupId>org.springframework.session</groupId><artifactId>spring-session-bom</artifactId><version>${spring-session.version}</version><type>pom</type><scope>import</scope></dependency>
+                    <dependency><groupId>org.springframework.statemachine</groupId><artifactId>spring-statemachine-bom</artifactId><version>${spring-statemachine.version}</version><type>pom</type><scope>import</scope></dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!--<dependency><groupId>org.mybatis.spring.boot</groupId><artifactId>mybatis-spring-boot-starter</artifactId><version>${mybatis-spring-boot-starter.version}</version></dependency>-->
 
                     <dependency><groupId>com.101tec</groupId><artifactId>zkclient</artifactId><version>${zkclient.version}</version></dependency>
 

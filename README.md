@@ -17,6 +17,10 @@ Dependency management for spring-boot, spring-data, spring-cloud
 io.spring.platform:platform-bom:Cairo-SR1
 org.springframework.data:spring-data-releasetrain:Kay-SR7
 org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1
+org.springframework.batch:spring-batch-core:4.0.1.RELEASE
+org.springframework.integration:spring-integration-core:5.0.5.RELEASE
+org.springframework.session:spring-session:1.3.3.RELEASE
+org.springframework.statemachine:spring-statemachine-bom:2.0.1.RELEASE
 ...
 ```
 
@@ -25,6 +29,10 @@ org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1
 io.spring.platform:platform-bom:Cairo-SR1
 org.springframework.data:spring-data-releasetrain:Kay-SR6
 org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1
+org.springframework.batch:spring-batch-core:4.0.1.RELEASE
+org.springframework.integration:spring-integration-core:5.0.4.RELEASE
+org.springframework.session:spring-session:1.3.3.RELEASE
+org.springframework.statemachine:spring-statemachine-bom:2.0.1.RELEASE
 ...
 ```
 
@@ -33,6 +41,10 @@ org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1
 io.spring.platform:platform-bom:Brussels-SR10
 org.springframework.data:spring-data-releasetrain:Ingalls-SR12
 org.springframework.cloud:spring-cloud-dependencies:Dalston.SR5
+org.springframework.batch:spring-batch-core:3.0.9.RELEASE
+org.springframework.integration:spring-integration-core:4.3.16.RELEASE
+org.springframework.session:spring-session:1.3.3.RELEASE
+org.springframework.statemachine:spring-statemachine-core:1.2.11.RELEASE
 ...
 ```
 
@@ -41,6 +53,10 @@ org.springframework.cloud:spring-cloud-dependencies:Dalston.SR5
 io.spring.platform:platform-bom:Brussels-SR9
 org.springframework.data:spring-data-releasetrain:Ingalls-SR11
 org.springframework.cloud:spring-cloud-dependencies:Dalston.SR4
+org.springframework.batch:spring-batch-core:3.0.9.RELEASE
+org.springframework.integration:spring-integration-core:4.3.16.RELEASE
+org.springframework.session:spring-session:1.3.3.RELEASE
+org.springframework.statemachine:spring-statemachine-core:1.2.11.RELEASE
 ...
 ```
 
