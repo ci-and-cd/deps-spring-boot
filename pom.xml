@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.home1</groupId>
+        <artifactId>build-site</artifactId>
+        <version>0.0.1.OSS-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>deps-spring-boot</artifactId>
+    <description>Dependency management for spring-boot, spring-data, spring-cloud</description>
+    <name>deps-spring-boot</name>
+    <packaging>pom</packaging>
+    <url>https://github.com/home1-oss/deps-spring-boot</url>
+    <version>0.0.1.OSS-SNAPSHOT</version>
+
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/home1-oss/deps-spring-boot</url>
+    </ciManagement>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/home1-oss/deps-spring-boot/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/home1-oss/deps-spring-boot</url>
+        <connection>scm:git:https://github.com/home1-oss/deps-spring-boot.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/home1-oss/deps-spring-boot.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <modules>
+        <module>deps-spring-boot-1.x</module>
+        <module>deps-spring-boot-2.x</module>
+    </modules>
+
+    <properties>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>annotations</artifactId>
+                <version>3.0.1u2</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

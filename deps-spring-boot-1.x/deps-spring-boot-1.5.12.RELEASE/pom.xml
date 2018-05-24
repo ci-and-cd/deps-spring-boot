@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.home1</groupId>
+        <artifactId>deps-spring-boot-1.x</artifactId>
+        <version>0.0.1.OSS-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>deps-spring-boot-1.5.12.RELEASE</artifactId>
+    <description>Dependency management for spring-boot (1.5.12.RELEASE), spring-data, spring-cloud</description>
+    <name>deps-spring-boot-1.5.12.RELEASE</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!-- org.springframework.boot:spring-boot-dependencies -->
+        <spring-boot.version>1.5.12.RELEASE</spring-boot.version>
+        <!-- org.springframework.data:spring-data-releasetrain -->
+        <spring-data-releasetrain.version>Ingalls-SR11</spring-data-releasetrain.version>
+        <!-- io.spring.platform:platform-bom -->
+        <spring-io-platform.version>Brussels-SR9</spring-io-platform.version>
+        <!-- org.springframework.cloud:spring-cloud-dependencies -->
+        <spring-cloud.version>Edgware.SR3</spring-cloud.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+        </dependencies>
+    </dependencyManagement>
+</project>
