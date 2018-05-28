@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>cn.home1</groupId>
-        <artifactId>build-site</artifactId>
+        <artifactId>build-docker</artifactId>
         <version>0.0.1.OSS-SNAPSHOT</version>
     </parent>
 
@@ -14,17 +14,17 @@
     <description>Dependency management for spring-boot, spring-data, spring-cloud</description>
     <name>deps-spring-boot</name>
     <packaging>pom</packaging>
-    <url>https://github.com/home1-oss/deps-spring-boot</url>
+    <url>https://github.com/ci-and-cd/deps-spring-boot</url>
     <version>0.0.1.OSS-SNAPSHOT</version>
 
     <ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.org/home1-oss/deps-spring-boot</url>
+        <url>https://travis-ci.org/ci-and-cd/deps-spring-boot</url>
     </ciManagement>
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/home1-oss/deps-spring-boot/issues</url>
+        <url>https://github.com/ci-and-cd/deps-spring-boot/issues</url>
     </issueManagement>
 
     <licenses>
@@ -36,9 +36,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/home1-oss/deps-spring-boot</url>
-        <connection>scm:git:https://github.com/home1-oss/deps-spring-boot.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/home1-oss/deps-spring-boot.git</developerConnection>
+        <url>https://github.com/ci-and-cd/deps-spring-boot</url>
+        <connection>scm:git:https://github.com/ci-and-cd/deps-spring-boot.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/ci-and-cd/deps-spring-boot.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
