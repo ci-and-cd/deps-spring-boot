@@ -12,6 +12,6 @@ echo -e "<<<<<<<<<< ---------- custom, override options ---------- <<<<<<<<<<\n"
 
 echo -e "\n>>>>>>>>>> ---------- call remote script ---------- >>>>>>>>>>"
 if [ -z "${CI_OPT_CI_SCRIPT}" ]; then CI_OPT_CI_SCRIPT="https://github.com/ci-and-cd/maven-build/raw/master/src/main/ci-script/lib_ci.sh"; fi
-echo "WORK_DIR=$(basename $(pwd)) mkdir -p /tmp/${WORK_DIR}; curl -s -L ${CI_OPT_CI_SCRIPT} > /tmp/${WORK_DIR}/lib_ci.sh && source /tmp/${WORK_DIR}/lib_ci.sh"
-WORK_DIR=$(basename $(pwd)) mkdir -p /tmp/${WORK_DIR}; curl -s -L ${CI_OPT_CI_SCRIPT} > /tmp/${WORK_DIR}/lib_ci.sh && source /tmp/${WORK_DIR}/lib_ci.sh
+echo "curl -s -L ${CI_OPT_CI_SCRIPT} > /tmp/$(basename $(pwd))-lib_ci.sh && source /tmp/$(basename $(pwd))-lib_ci.sh"
+curl -s -L ${CI_OPT_CI_SCRIPT} > /tmp/$(basename $(pwd))-lib_ci.sh && source /tmp/$(basename $(pwd))-lib_ci.sh
 echo -e "<<<<<<<<<< ---------- call remote script ---------- <<<<<<<<<<\n"
