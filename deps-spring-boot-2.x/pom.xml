@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot</artifactId>
-        <version>0.0.1.OSS-SNAPSHOT</version>
+        <version>0.0.1.OSS</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.x</artifactId>
@@ -134,10 +134,9 @@
                         <artifactId>spring-boot-starter-web</artifactId>
                         <version>${spring-boot.version}</version>
                         <exclusions>
-                            <!-- let user select log solution and server -->
+                            <!-- let user select log solution and web container/server -->
                             <exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId></exclusion>
-                            <exclusion><groupId>org.slf4j</groupId><artifactId>log4j-over-slf4j</artifactId></exclusion>
-                            <exclusion><groupId>ch.qos.logback</groupId><artifactId>logback-classic</artifactId></exclusion>
+                            <exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId></exclusion>
                         </exclusions>
                     </dependency>
 
