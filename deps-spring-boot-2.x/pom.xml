@@ -48,7 +48,7 @@
 
                 <!-- org.springframework.boot:spring-boot-dependencies -->
                 <commons-lang3.version>3.7</commons-lang3.version>
-                <log4j2.version>2.8.1</log4j2.version>
+                <log4j2.version>2.11.0</log4j2.version>
                 <!-- io.spring.platform:platform-bom -->
                 <bouncycastle.version>1.56</bouncycastle.version>
                 <jackson.version>2.9.0</jackson.version>
@@ -59,7 +59,7 @@
                 <!-- third-party -->
                 <gson-jodatime-serialisers.version>1.6.0</gson-jodatime-serialisers.version>
                 <auto-value.version>1.5</auto-value.version>
-                <disruptor.version>3.3.6</disruptor.version>
+                <disruptor.version>3.3.7</disruptor.version>
                 <hikaricp.version>2.4.6</hikaricp.version>
                 <freebuilder.version>1.14.4</freebuilder.version>
                 <jjwt.version>0.9.0</jjwt.version>
@@ -192,6 +192,7 @@
                     <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-api</artifactId><version>${log4j2.version}</version></dependency>
                     <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-core</artifactId><version>${log4j2.version}</version></dependency>
                     <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-1.2-api</artifactId><version>${log4j2.version}</version></dependency>
+                    <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-web</artifactId><version>${log4j2.version}</version></dependency>
 
                     <dependency><groupId>org.apache.zookeeper</groupId><artifactId>zookeeper</artifactId><version>${zookeeper.version}</version></dependency>
 
