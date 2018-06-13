@@ -1,14 +1,14 @@
 # deps-spring-boot
 Dependency management for spring-boot, spring-data, spring-cloud
 
-## spring-boot
+## I. spring-boot
 [https://projects.spring.io/spring-boot/](https://projects.spring.io/spring-boot/)  
 
-### Spring Boot Starter Parent
+### 1. Spring Boot Starter Parent
 [github /spring-projects/spring-boot/spring-boot-starters/spring-boot-starter-parent](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-starters/spring-boot-starter-parent/pom.xml)  
 [mvnrepository Spring Boot Starter Parent](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent)  
 
-### Spring Boot Dependencies
+### 2. Spring Boot Dependencies
 [github /spring-projects/spring-boot/spring-boot-dependencies/](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-dependencies/pom.xml)  
 [mvnrepository Spring Boot Dependencies](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies)  
 
@@ -61,14 +61,14 @@ org.springframework.statemachine:spring-statemachine-core:1.2.11.RELEASE
 ```
 
 
-## spring-data
+## II. spring-data
 [http://projects.spring.io/spring-data/](http://projects.spring.io/spring-data/)  
 
-### Spring Data Release Train BOM
+### 1. Spring Data Release Train BOM
 [github /spring-projects/spring-data-build(spring-data-parent)/bom](https://github.com/spring-projects/spring-data-build/blob/master/bom/pom.xml)    
 [mvnrepository Spring Data Release Train BOM](https://mvnrepository.com/artifact/org.springframework.data/spring-data-releasetrain)    
 
-### Spring Data Build General Parent Module
+### 2. Spring Data Build General Parent Module
 [github /spring-projects/spring-data-build(spring-data-parent)](https://github.com/spring-projects/spring-data-build/blob/master/parent/pom.xml)  
 [mvnrepository Spring Data Build General Parent Module](http://mvnrepository.com/artifact/org.springframework.data.build/spring-data-parent)  
 
@@ -112,7 +112,7 @@ org.springframework.data:spring-data-elasticsearch:2.1.11.RELEASE
 ...
 ```
 
-## spring-cloud
+## III. spring-cloud
 
 parent -> child relations:
 ```text
@@ -124,27 +124,27 @@ spring-cloud-build(parent directory)/spring-cloud-dependencies-parent -> spring-
 spring-cloud-build(parent directory)/spring-cloud-dependencies-parent -> spring-cloud-release(parent directory, spring-cloud-starter-build)/spring-cloud-dependencies
 ```
 
-### Spring Cloud Starter Parent
+### 1. Spring Cloud Starter Parent
 [github /spring-cloud/spring-cloud-starters/spring-cloud-starter-parent](https://github.com/spring-cloud/spring-cloud-starters/blob/master/spring-cloud-starter-parent/pom.xml)  
 [mvnrepository Spring Cloud Starter Parent](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-parent)  
 [maven milestone](http://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-starter-parent/)  
 
-### Spring Cloud Build Dependencies (spring-boot, spring-data version info)
+### 2. Spring Cloud Build Dependencies (spring-boot, spring-data version info)
 [github /spring-cloud/spring-cloud-build/spring-cloud-build-dependencies](https://github.com/spring-cloud/spring-cloud-build/blob/master/spring-cloud-build-dependencies/pom.xml)  
 [mvnrepository Spring Cloud Build Dependencies](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-build-dependencies)  
 [maven milestone](http://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-build-dependencies/)  
 
-### Spring Cloud Dependencies Parent (no version info)
+### 3. Spring Cloud Dependencies Parent (no version info)
 [github /spring-cloud/spring-cloud-build/spring-cloud-dependencies-parent](https://github.com/spring-cloud/spring-cloud-build/blob/master/spring-cloud-dependencies-parent/pom.xml)  
 [mvnrepository Spring Cloud Dependencies Parent](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies-parent)  
 [maven milestone](http://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-dependencies-parent/)  
 
-### Spring Cloud Dependencies (no version info)
+### 4. Spring Cloud Dependencies (no version info)
 [github /spring-cloud/spring-cloud-release/spring-cloud-dependencies](https://github.com/spring-cloud/spring-cloud-release/blob/master/spring-cloud-dependencies/pom.xml)  
 [mvnrepository Spring Cloud Dependencies](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies)  
 [maven milestone](http://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-dependencies/)  
 
-### Spring Cloud Commons Dependencies (no version info)
+### 5. Spring Cloud Commons Dependencies (no version info)
 [github /spring-cloud/spring-cloud-commons/spring-cloud-commons-dependencies](https://github.com/spring-cloud/spring-cloud-commons/blob/master/spring-cloud-commons-dependencies/pom.xml)  
 [mvnrepository Spring Cloud Commons Dependencies](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-commons-dependencies)  
 [maven milestone](http://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-commons-dependencies/)  
@@ -163,9 +163,10 @@ org.springframework.data:spring-data-releasetrain:Ingalls-SR10
 ...
 ```
 
-## spring-io-platform
+## IV. spring-io-platform
 [http://platform.spring.io/platform/](http://platform.spring.io/platform/)  
 
+### 1. Spring IO Platform Bill of Materials
 [github /spring-io/platform](https://github.com/spring-io/platform/blob/master/platform-bom/pom.xml)  
 [mvnrepository Spring IO Platform Bill of Materials](http://mvnrepository.com/artifact/io.spring.platform/platform-bom)  
 
@@ -246,3 +247,34 @@ org.projectlombok:lombok:1.16.20
 org.slf4j:slf4j-api:1.7.25
 ...
 ```
+
+## V. Notice
+We decide to let users choose log solution (logback or log4j2) and web container/server (undertow, jetty or tomcat) them self,
+so **we excluded (by exclude them explicitly from spring-boot-starter-x and set them to provided scope) 
+Spring Boot Logging Starter (org.springframework.boot:spring-boot-starter-logging) and 
+Spring Boot Tomcat Starter (org.springframework.boot:spring-boot-starter-tomcat).**  
+
+**You need to add these dependencies manually.**  
+
+Artifacts using Spring Boot Logging Starter (org.springframework.boot:spring-boot-starter-logging) as compile dependency:  
+
+- org.springframework.analytics:spring-analytics
+- org.springframework.boot:spring-boot-starter
+- org.springframework.boot:spring-boot-starter-test
+- org.springframework.boot:spring-boot-starter-web
+- org.springframework.boot.experimental:spring-boot-thin-tools
+- org.springframework.cloud:spring-cloud-contract-converters
+- org.springframework.cloud:spring-cloud-deployer-thin
+- org.springframework.cloud:spring-cloud-function-stream
+- org.springframework.cloud:spring-cloud-dataflow-core
+- org.springframework.cloud:spring-cloud-dataflow-shell-core
+- org.springframework.cloud:spring-cloud-dataflow-server-core
+- org.springframework.cloud:spring-cloud-skipper-client
+- org.springframework.cloud:spring-cloud-skipper-shell-commands
+- org.springframework.cloud:spring-cloud-stream-binder-redis
+- org.springframework.cloud:spring-cloud-stream-binder-rabbit-test-support
+- org.springframework.cloud:spring-cloud-stream-test-support-internal
+
+Artifacts using Spring Boot Tomcat Starter (org.springframework.boot:spring-boot-starter-tomcat) as compile dependency
+- org.springframework.boot:spring-boot-starter-jersey
+- org.springframework.boot:spring-boot-starter-web

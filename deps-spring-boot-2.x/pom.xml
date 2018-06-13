@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot</artifactId>
-        <version>0.0.1.OSS</version>
+        <version>0.0.2.OSS</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.x</artifactId>
@@ -48,7 +48,7 @@
 
                 <!-- org.springframework.boot:spring-boot-dependencies -->
                 <commons-lang3.version>3.7</commons-lang3.version>
-                <log4j2.version>2.8.1</log4j2.version>
+                <log4j2.version>2.11.0</log4j2.version>
                 <!-- io.spring.platform:platform-bom -->
                 <bouncycastle.version>1.56</bouncycastle.version>
                 <jackson.version>2.9.0</jackson.version>
@@ -59,7 +59,7 @@
                 <!-- third-party -->
                 <gson-jodatime-serialisers.version>1.6.0</gson-jodatime-serialisers.version>
                 <auto-value.version>1.5</auto-value.version>
-                <disruptor.version>3.3.6</disruptor.version>
+                <disruptor.version>3.3.7</disruptor.version>
                 <hikaricp.version>2.4.6</hikaricp.version>
                 <freebuilder.version>1.14.4</freebuilder.version>
                 <jjwt.version>0.9.0</jjwt.version>
@@ -120,21 +120,23 @@
 
                     <!-- For this to work, you must go to: Preferences->Editor->Code Style->Formatter Control and check Enable formatter markers in comments -->
                     <!-- @formatter:off -->
+                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId><version>[1.0.0.RELEASE,)</version><scope>provided</scope></dependency>
                     <dependency>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter</artifactId>
-                        <version>${spring-boot.version}</version>
-                        <exclusions>
-                            <!-- let user select log solution -->
-                            <exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId></exclusion>
-                        </exclusions>
+                        <groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter</artifactId><version>${spring-boot.version}</version>
+                        <exclusions><exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId></exclusion></exclusions>
                     </dependency>
                     <dependency>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-web</artifactId>
-                        <version>${spring-boot.version}</version>
+                        <groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-test</artifactId><version>${spring-boot.version}</version>
+                        <exclusions><exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId></exclusion></exclusions>
+                    </dependency>
+                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId><version>[1.0.0.RELEASE,)</version><scope>provided</scope></dependency>
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-jersey</artifactId><version>${spring-boot.version}</version>
+                        <exclusions><exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId></exclusion></exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-web</artifactId><version>${spring-boot.version}</version>
                         <exclusions>
-                            <!-- let user select log solution and web container/server -->
                             <exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId></exclusion>
                             <exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId></exclusion>
                         </exclusions>
@@ -192,6 +194,7 @@
                     <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-api</artifactId><version>${log4j2.version}</version></dependency>
                     <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-core</artifactId><version>${log4j2.version}</version></dependency>
                     <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-1.2-api</artifactId><version>${log4j2.version}</version></dependency>
+                    <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-web</artifactId><version>${log4j2.version}</version></dependency>
 
                     <dependency><groupId>org.apache.zookeeper</groupId><artifactId>zookeeper</artifactId><version>${zookeeper.version}</version></dependency>
 
