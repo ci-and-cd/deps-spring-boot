@@ -15,7 +15,7 @@
     <name>deps-spring-boot</name>
     <packaging>pom</packaging>
     <url>https://github.com/ci-and-cd/deps-spring-boot</url>
-    <version>0.0.3.OSS</version>
+    <version>0.0.4.OSS-SNAPSHOT</version>
 
     <ciManagement>
         <system>Travis CI</system>
