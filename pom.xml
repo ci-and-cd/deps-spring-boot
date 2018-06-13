@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>build-docker</artifactId>
-        <version>0.0.1.OSS</version>
+        <version>0.0.2.OSS</version>
     </parent>
 
     <artifactId>deps-spring-boot</artifactId>
@@ -48,6 +48,7 @@
     </modules>
 
     <properties>
+        <com.google.code.findbugs.annotations.version>3.0.1u2</com.google.code.findbugs.annotations.version>
     </properties>
 
     <dependencyManagement>
@@ -55,7 +56,7 @@
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>annotations</artifactId>
-                <version>3.0.1u2</version>
+                <version>${com.google.code.findbugs.annotations.version}</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
