@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot</artifactId>
-        <version>0.0.3.OSS</version>
+        <version>0.0.4.OSS</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.x</artifactId>
@@ -120,7 +120,8 @@
 
                     <!-- For this to work, you must go to: Preferences->Editor->Code Style->Formatter Control and check Enable formatter markers in comments -->
                     <!-- @formatter:off -->
-                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId><version>[1.0.0.RELEASE,)</version><scope>provided</scope></dependency>
+                    <!--<dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId><version>[1.0.0.RELEASE,)</version><scope>provided</scope></dependency>-->
+                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId><version>${spring-boot.version}</version><scope>provided</scope></dependency>
                     <dependency>
                         <groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter</artifactId><version>${spring-boot.version}</version>
                         <exclusions><exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId></exclusion></exclusions>
@@ -129,7 +130,8 @@
                         <groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-test</artifactId><version>${spring-boot.version}</version>
                         <exclusions><exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-logging</artifactId></exclusion></exclusions>
                     </dependency>
-                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId><version>[1.0.0.RELEASE,)</version><scope>provided</scope></dependency>
+                    <!--<dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId><version>[1.0.0.RELEASE,)</version><scope>provided</scope></dependency>-->
+                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId><version>${spring-boot.version}</version><scope>provided</scope></dependency>
                     <dependency>
                         <groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-jersey</artifactId><version>${spring-boot.version}</version>
                         <exclusions><exclusion><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-tomcat</artifactId></exclusion></exclusions>
