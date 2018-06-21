@@ -55,6 +55,7 @@
                 <jackson1.version>1.9.13</jackson1.version>
                 <lombok.version>1.16.18</lombok.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
+                <netty.version>4.1.24.Final</netty.version>
 
                 <!-- third-party -->
                 <gson-jodatime-serialisers.version>1.6.0</gson-jodatime-serialisers.version>
@@ -89,6 +90,13 @@
             </properties>
             <dependencyManagement>
                 <dependencies>
+                    <dependency>
+                        <groupId>io.netty</groupId>
+                        <artifactId>netty-bom</artifactId>
+                        <version>${netty.version}</version>
+                        <scope>import</scope>
+                        <type>pom</type>
+                    </dependency>
                     <dependency>
                         <groupId>io.spring.platform</groupId>
                         <artifactId>platform-bom</artifactId>
@@ -273,9 +281,8 @@
                 <super-csv.version>2.4.0</super-csv.version>
             </properties>
             <dependencyManagement>
+                <!-- @formatter:off -->
                 <dependencies>
-                    <!-- For this to work, you must go to: Preferences->Editor->Code Style->Formatter Control and check Enable formatter markers in comments -->
-                    <!-- @formatter:off -->
                     <dependency><groupId>org.mybatis.spring.boot</groupId><artifactId>mybatis-spring-boot-starter</artifactId><version>${mybatis-spring-boot-starter.version}</version></dependency>
 
                     <dependency><groupId>com.amazonaws</groupId><artifactId>aws-java-sdk-s3</artifactId><version>${aws-java-sdk-s3.version}</version></dependency>
@@ -311,8 +318,8 @@
 
                     <dependency><groupId>net.logstash.logback</groupId><artifactId>logstash-logback-encoder</artifactId><version>${logstash-logback-encoder.version}</version></dependency>
                     <dependency><groupId>net.sf.supercsv</groupId><artifactId>super-csv</artifactId><version>${super-csv.version}</version></dependency>
-                    <!-- @formatter:on -->
                 </dependencies>
+                <!-- @formatter:on -->
             </dependencyManagement>
         </profile>
     </profiles>
