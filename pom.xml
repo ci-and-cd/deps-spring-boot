@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>build-docker</artifactId>
-        <version>0.0.5.OSS</version>
+        <version>0.0.8.OSS</version>
     </parent>
 
     <artifactId>deps-spring-boot</artifactId>
@@ -17,23 +17,11 @@
     <url>https://github.com/ci-and-cd/deps-spring-boot</url>
     <version>0.0.6.OSS-SNAPSHOT</version>
 
-    <ciManagement>
-        <system>Travis CI</system>
-        <url>https://travis-ci.org/ci-and-cd/deps-spring-boot</url>
-    </ciManagement>
-
-    <issueManagement>
-        <system>GitHub Issues</system>
-        <url>https://github.com/ci-and-cd/deps-spring-boot/issues</url>
-    </issueManagement>
-
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+    <!-- @formatter:off -->
+    <ciManagement><system>Travis CI</system><url>https://travis-ci.org/ci-and-cd/deps-spring-boot</url></ciManagement>
+    <issueManagement><system>GitHub Issues</system><url>https://github.com/ci-and-cd/deps-spring-boot/issues</url></issueManagement>
+    <licenses><license><name>MIT License</name><url>http://www.opensource.org/licenses/mit-license.php</url><distribution>repo</distribution></license></licenses>
+    <!-- @formatter:on -->
 
     <scm>
         <url>https://github.com/ci-and-cd/deps-spring-boot</url>
@@ -66,27 +54,18 @@
     <repositories>
         <!-- Make artifacts in OSSRH repositories available -->
         <repository>
-            <id>OSSRH-releases</id>
-            <name>central releases</name>
-            <url>https://oss.sonatype.org/content/repositories/releases/</url>
-            <releases><enabled>true</enabled><updatePolicy>${repositories.releases.updatePolicy}</updatePolicy></releases>
-            <snapshots><enabled>false</enabled></snapshots>
+            <id>OSSRH-releases</id><name>central releases</name><url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <releases><enabled>true</enabled><updatePolicy>${repositories.releases.updatePolicy}</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
         </repository>
         <repository>
-            <id>OSSRH-snapshots</id>
-            <name>central snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <releases><enabled>false</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
+            <id>OSSRH-snapshots</id><name>central snapshots</name><url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases><enabled>false</enabled></releases><snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>central</id>
-            <name>central</name>
-            <url>http://repo1.maven.org/maven2</url>
-            <releases><enabled>true</enabled><updatePolicy>${repositories.releases.updatePolicy}</updatePolicy></releases>
-            <snapshots><enabled>false</enabled></snapshots>
+            <id>central</id><name>central</name><url>http://repo1.maven.org/maven2</url>
+            <releases><enabled>true</enabled><updatePolicy>${repositories.releases.updatePolicy}</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
     <!-- @formatter:on -->
