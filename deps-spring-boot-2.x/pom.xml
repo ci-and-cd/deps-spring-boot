@@ -39,7 +39,7 @@
                 <!-- io.spring.platform:platform-bom -->
                 <spring-io-platform.version>Cairo-SR2</spring-io-platform.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
-                <spring-cloud.version>Finchley</spring-cloud.version>
+                <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
                 <spring-mobile.version>1.1.5.RELEASE</spring-mobile.version>
                 <spring-integration.version>5.0.6.RELEASE</spring-integration.version>
                 <spring-integration-kafka.version>3.0.3.RELEASE</spring-integration-kafka.version>
