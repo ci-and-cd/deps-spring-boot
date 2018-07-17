@@ -33,58 +33,58 @@
             </activation>
             <properties>
                 <!-- org.springframework.boot:spring-boot-dependencies -->
-                <spring-boot.version>2.0.2.RELEASE</spring-boot.version>
+                <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
                 <!-- org.springframework.data:spring-data-releasetrain -->
-                <spring-data-releasetrain.version>Kay-SR7</spring-data-releasetrain.version>
+                <spring-data-releasetrain.version>Kay-SR8</spring-data-releasetrain.version>
                 <!-- io.spring.platform:platform-bom -->
-                <spring-io-platform.version>Cairo-SR1</spring-io-platform.version>
+                <spring-io-platform.version>Cairo-SR2</spring-io-platform.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
-                <spring-cloud.version>Finchley.RC1</spring-cloud.version>
+                <spring-cloud.version>Finchley</spring-cloud.version>
                 <spring-mobile.version>1.1.5.RELEASE</spring-mobile.version>
-                <spring-integration.version>5.0.5.RELEASE</spring-integration.version>
+                <spring-integration.version>5.0.6.RELEASE</spring-integration.version>
                 <spring-integration-kafka.version>3.0.3.RELEASE</spring-integration-kafka.version>
-                <spring-session.version>Apple-SR2</spring-session.version>
-                <spring-statemachine.version>2.0.1.RELEASE</spring-statemachine.version>
+                <spring-session.version>Apple-SR3</spring-session.version>
+                <spring-statemachine.version>2.0.2.RELEASE</spring-statemachine.version>
 
                 <!-- org.springframework.boot:spring-boot-dependencies -->
                 <commons-lang3.version>3.7</commons-lang3.version>
                 <log4j2.version>2.11.0</log4j2.version>
                 <!-- io.spring.platform:platform-bom -->
-                <bouncycastle.version>1.56</bouncycastle.version>
-                <jackson.version>2.9.0</jackson.version>
+                <bouncycastle.version>1.59</bouncycastle.version>
+                <jackson.version>2.9.6</jackson.version>
                 <jackson1.version>1.9.13</jackson1.version>
-                <lombok.version>1.16.18</lombok.version>
+                <lombok.version>1.18.0</lombok.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
                 <!--<netty.version>4.1.24.Final</netty.version>-->
 
                 <!-- third-party -->
                 <gson-jodatime-serialisers.version>1.6.0</gson-jodatime-serialisers.version>
-                <auto-value.version>1.5</auto-value.version>
+                <auto-value.version>1.6.2</auto-value.version>
                 <disruptor.version>3.3.7</disruptor.version>
-                <hikaricp.version>2.4.6</hikaricp.version>
-                <freebuilder.version>1.14.4</freebuilder.version>
-                <jjwt.version>0.9.0</jjwt.version>
+                <hikaricp.version>2.7.9</hikaricp.version>
+                <freebuilder.version>1.14.9</freebuilder.version>
+                <jjwt.version>0.9.1</jjwt.version>
 
                 <!-- third-party (potential risk of conflicts) -->
                 <!-- note:  commons-beanutils, commons-collections, commons-digester version -->
                 <commons-validator.version>1.6</commons-validator.version>
-                <commons-collections4.version>4.1</commons-collections4.version>
+                <commons-collections4.version>4.2</commons-collections4.version>
                 <!-- conflict: hibernate-validator & io.springfox:springfox-swagger2 -->
-                <classmate.version>1.3.3</classmate.version>
+                <classmate.version>1.3.4</classmate.version>
                 <guava.version>20.0</guava.version>
                 <!-- note: org.apache.kafka:kafka_2.11 com.101tec:zkclient version -->
-                <zookeeper.version>3.4.10</zookeeper.version>
+                <zookeeper.version>3.4.12</zookeeper.version>
                 <!-- note: hibernate version -->
                 <usertype.version>6.0.1.GA</usertype.version>
                 <!-- note: org.javassist:javassist version -->
-                <javassist.version>3.21.0-GA</javassist.version>
+                <javassist.version>3.23.1-GA</javassist.version>
                 <!-- note: classmate version -->
-                <springfox-swagger.version>2.8.0</springfox-swagger.version>
-                <swagger.version>1.5.14</swagger.version>
+                <springfox-swagger.version>2.9.2</springfox-swagger.version>
+                <swagger.version>1.5.20</swagger.version>
                 <!-- conflict: spring-io-platform & orika-core -->
                 <orika.version>1.5.2</orika.version>
                 <!-- conflict: org.eclipse.jetty:jetty-annotations & com.netflix.governator:governator -->
-                <asm.version>5.2</asm.version>
+                <asm.version>6.2</asm.version>
                 <!-- note: cglib version -->
                 <p6spy.version>3.7.0</p6spy.version>
             </properties>
@@ -271,7 +271,7 @@
                 <beetl.version>2.2.7</beetl.version>
                 <zkclient.version>0.10</zkclient.version>
                 <protostuff.version>1.5.9</protostuff.version>
-                <httpclient.version>4.5.5</httpclient.version>
+                <httpclient.version>4.5.6</httpclient.version>
                 <poi.version>3.9</poi.version>
                 <redisson.version>3.7.0</redisson.version>
                 <reflection.version>0.9.11</reflection.version>
