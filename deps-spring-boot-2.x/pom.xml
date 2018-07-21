@@ -47,6 +47,7 @@
                 <spring-statemachine.version>2.0.2.RELEASE</spring-statemachine.version>
 
                 <!-- org.springframework.boot:spring-boot-dependencies -->
+                <aspectj.version>1.8.13</aspectj.version>
                 <commons-lang3.version>3.7</commons-lang3.version>
                 <log4j2.version>2.11.0</log4j2.version>
                 <!-- io.spring.platform:platform-bom -->
@@ -242,9 +243,12 @@
 
                     <dependency><groupId>ma.glasnost.orika</groupId><artifactId>orika-core</artifactId><version>${orika.version}</version></dependency>
 
-                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-commons</artifactId><version>${asm.version}</version></dependency>
-                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-tree</artifactId><version>${asm.version}</version></dependency>
                     <dependency><groupId>org.ow2.asm</groupId><artifactId>asm</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-all</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-analysis</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-commons</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-debug-all</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-tree</artifactId><version>${asm.version}</version></dependency>
 
                     <dependency><groupId>p6spy</groupId><artifactId>p6spy</artifactId><version>${p6spy.version}</version></dependency>
                     <!-- @formatter:on -->

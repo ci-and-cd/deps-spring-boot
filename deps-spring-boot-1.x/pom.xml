@@ -58,6 +58,7 @@
                 <netty.version>4.1.24.Final</netty.version>
 
                 <!-- third-party -->
+                <aspectj.version>1.8.13</aspectj.version>
                 <gson-jodatime-serialisers.version>1.6.0</gson-jodatime-serialisers.version>
                 <auto-value.version>1.5</auto-value.version>
                 <disruptor.version>3.3.6</disruptor.version>
@@ -242,9 +243,12 @@
 
                     <dependency><groupId>ma.glasnost.orika</groupId><artifactId>orika-core</artifactId><version>${orika.version}</version></dependency>
 
-                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-commons</artifactId><version>${asm.version}</version></dependency>
-                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-tree</artifactId><version>${asm.version}</version></dependency>
                     <dependency><groupId>org.ow2.asm</groupId><artifactId>asm</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-all</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-analysis</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-commons</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-debug-all</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-tree</artifactId><version>${asm.version}</version></dependency>
 
                     <dependency><groupId>p6spy</groupId><artifactId>p6spy</artifactId><version>${p6spy.version}</version></dependency>
                     <!-- @formatter:on -->
