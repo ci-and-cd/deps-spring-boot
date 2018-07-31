@@ -54,7 +54,7 @@
                 <bouncycastle.version>1.59</bouncycastle.version>
                 <jackson.version>2.9.6</jackson.version>
                 <jackson1.version>1.9.13</jackson1.version>
-                <lombok.version>1.18.0</lombok.version>
+                <lombok.version>1.18.2</lombok.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
                 <!--<netty.version>4.1.24.Final</netty.version>-->
 
