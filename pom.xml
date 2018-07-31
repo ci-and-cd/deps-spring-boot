@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>build-docker</artifactId>
-        <version>0.0.8.OSS</version>
+        <version>0.0.11.OSS-SNAPSHOT</version>
     </parent>
 
     <artifactId>deps-spring-boot</artifactId>
