@@ -32,6 +32,10 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- @formatter:off -->
+            <!-- Transitive dependencies conflict between spring-boot-starter-data-elasticsearch:1.5.12.RELEASE and spring-cloud-starter-feign:1.4.4.RELEASE -->
+            <dependency><groupId>org.hdrhistogram</groupId><artifactId>HdrHistogram</artifactId><version>2.1.9</version></dependency>
+            <!-- @formatter:on -->
         </dependencies>
     </dependencyManagement>
 </project>
