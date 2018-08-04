@@ -28,7 +28,7 @@
     </custom>
 
     <body>
-        <!--menu ref="parent" /-->
+        <menu ref="parent" />
         <menu name="DOCUMENTATION">
             <item href="README.html" name="README" />
         </menu>

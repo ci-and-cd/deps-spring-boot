@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot</artifactId>
-        <version>0.0.7.OSS</version>
+        <version>0.1.1</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.x</artifactId>
@@ -47,13 +47,14 @@
                 <spring-statemachine.version>2.0.2.RELEASE</spring-statemachine.version>
 
                 <!-- org.springframework.boot:spring-boot-dependencies -->
+                <aspectj.version>1.8.13</aspectj.version>
                 <commons-lang3.version>3.7</commons-lang3.version>
                 <log4j2.version>2.11.0</log4j2.version>
                 <!-- io.spring.platform:platform-bom -->
                 <bouncycastle.version>1.59</bouncycastle.version>
                 <jackson.version>2.9.6</jackson.version>
                 <jackson1.version>1.9.13</jackson1.version>
-                <lombok.version>1.18.0</lombok.version>
+                <lombok.version>1.18.2</lombok.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
                 <!--<netty.version>4.1.24.Final</netty.version>-->
 
@@ -242,9 +243,12 @@
 
                     <dependency><groupId>ma.glasnost.orika</groupId><artifactId>orika-core</artifactId><version>${orika.version}</version></dependency>
 
-                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-commons</artifactId><version>${asm.version}</version></dependency>
-                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-tree</artifactId><version>${asm.version}</version></dependency>
                     <dependency><groupId>org.ow2.asm</groupId><artifactId>asm</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-all</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-analysis</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-commons</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-debug-all</artifactId><version>${asm.version}</version></dependency>
+                    <dependency><groupId>org.ow2.asm</groupId><artifactId>asm-tree</artifactId><version>${asm.version}</version></dependency>
 
                     <dependency><groupId>p6spy</groupId><artifactId>p6spy</artifactId><version>${p6spy.version}</version></dependency>
                     <!-- @formatter:on -->
