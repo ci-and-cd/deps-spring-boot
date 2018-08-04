@@ -8,6 +8,8 @@
 
 
 echo -e "\n>>>>>>>>>> ---------- custom, override options ---------- >>>>>>>>>>"
+
+
 if [ -z "${CI_OPT_CI_SCRIPT}" ]; then CI_OPT_CI_SCRIPT="https://github.com/ci-and-cd/maven-build/raw/master/src/main/ci-script/lib_ci.sh"; fi
 if [ -z "${CI_OPT_GITHUB_SITE_PUBLISH}" ]; then CI_OPT_GITHUB_SITE_PUBLISH="false"; fi
 if [ -z "${CI_OPT_GITHUB_SITE_REPO_OWNER}" ]; then CI_OPT_GITHUB_SITE_REPO_OWNER="ci-and-cd"; fi

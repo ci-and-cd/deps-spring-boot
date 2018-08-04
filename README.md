@@ -1,7 +1,8 @@
 # deps-spring-boot
 
 [![Sonar](https://sonarcloud.io/api/project_badges/measure?project=cn.home1%3Adeps-spring-boot&metric=alert_status)](https://sonarcloud.io/dashboard?id=cn.home1%3Adeps-spring-boot)  
-[Maven Site](https://maven-site.infra.top/ci-and-cd/deps-spring-boot/staging/index.html)  
+[Maven Site (github.io)](https://ci-and-cd.github.io/ci-and-cd/snapshot/deps-spring-boot/index.html)  
+[Maven site (infra.top)](https://maven-site.infra.top/ci-and-cd/maven-build/snapshot/staging/deps-spring-boot/index.html)  
 [Source Repository](https://github.com/ci-and-cd/deps-spring-boot/tree/develop)  
 [![Build Status](https://travis-ci.org/ci-and-cd/deps-spring-boot.svg?branch=develop)](https://travis-ci.org/ci-and-cd/deps-spring-boot)  
 
