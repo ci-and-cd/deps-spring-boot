@@ -51,6 +51,7 @@
                 <log4j2.version>2.8.1</log4j2.version>
                 <!-- io.spring.platform:platform-bom -->
                 <bouncycastle.version>1.56</bouncycastle.version>
+                <hibernate-jpa-2.1-api.version>1.0.0.Final</hibernate-jpa-2.1-api.version>
                 <jackson.version>2.9.0</jackson.version>
                 <jackson1.version>1.9.13</jackson1.version>
                 <lombok.version>1.18.2</lombok.version>
@@ -220,6 +221,8 @@
                     This jar contains JCE provider and lightweight API for the Bouncy Castle Cryptography APIs for JDK 1.5 to JDK 1.8.
                     Note: this package includes the NTRU encryption algorithms.-->
                     <dependency><groupId>org.bouncycastle</groupId><artifactId>bcprov-ext-jdk15on</artifactId><version>${bouncycastle.version}</version></dependency>
+
+                    <dependency><groupId>org.hibernate.javax.persistence</groupId><artifactId>hibernate-jpa-2.1-api</artifactId><version>${hibernate-jpa-2.1-api.version}</version></dependency>
 
                     <!-- see: https://github.com/google/FreeBuilder -->
                     <dependency><groupId>org.inferred</groupId><artifactId>freebuilder</artifactId><version>${freebuilder.version}</version></dependency>
