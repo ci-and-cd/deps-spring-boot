@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>maven-build</artifactId>
-        <version>0.1.3</version>
+        <version>0.1.4-SNAPSHOT</version>
     </parent>
 
     <artifactId>deps-spring-boot</artifactId>
@@ -15,7 +15,7 @@
     <name>deps-spring-boot</name>
     <packaging>pom</packaging>
     <url>https://github.com/ci-and-cd/deps-spring-boot</url>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
 
     <!-- @formatter:off -->
     <ciManagement><system>Travis CI</system><url>https://travis-ci.org/ci-and-cd/deps-spring-boot</url></ciManagement>
@@ -35,11 +35,8 @@
         <module>deps-spring-boot-2.x</module>
     </modules>
 
-    <properties>
-        <com.google.code.findbugs.annotations.version>3.0.1u2</com.google.code.findbugs.annotations.version>
-    </properties>
-
     <dependencyManagement>
+        <!-- @formatter:off -->
         <dependencies>
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
@@ -47,7 +44,26 @@
                 <version>${com.google.code.findbugs.annotations.version}</version>
                 <scope>provided</scope>
             </dependency>
+
+            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>retrofit</artifactId><version>${retrofit2.version}</version></dependency>
+            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>adapter-rxjava2</artifactId><version>${retrofit2.version}</version></dependency>
+            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>converter-jackson</artifactId><version>${retrofit2.version}</version></dependency>
+
+            <dependency><groupId>javax.xml.bind</groupId><artifactId>jaxb-api</artifactId><version>${jaxb-api.version}</version></dependency>
+            <!--<dependency><groupId>javax.el</groupId><artifactId>el-api</artifactId><version>2.2</version></dependency>-->
+            <dependency><groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><version>${javax.el-api.version}</version></dependency>
+
+            <dependency><groupId>me.xdrop</groupId><artifactId>fuzzywuzzy</artifactId><version>${fuzzywuzzy.version}</version></dependency>
+
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
         </dependencies>
+        <!-- @formatter:on -->
     </dependencyManagement>
 
     <!-- @formatter:off -->
@@ -69,4 +85,14 @@
         </pluginRepository>
     </pluginRepositories>
     <!-- @formatter:on -->
+
+    <properties>
+        <com.google.code.findbugs.annotations.version>3.0.1u2</com.google.code.findbugs.annotations.version>
+        <fuzzywuzzy.version>1.1.9</fuzzywuzzy.version>
+        <javax.el-api.version>2.2.5</javax.el-api.version>
+        <!--<javax.el-api.version>3.0.0</javax.el-api.version>-->
+        <jaxb-api.version>2.3.0</jaxb-api.version>
+        <retrofit2.version>2.4.0</retrofit2.version>
+        <testcontainers.version>1.8.2</testcontainers.version>
+    </properties>
 </project>
