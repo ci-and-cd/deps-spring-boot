@@ -45,6 +45,10 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- see: https://github.com/google/auto/tree/master/value -->
+            <dependency><groupId>com.google.auto.value</groupId><artifactId>auto-value</artifactId><version>${auto-value.version}</version></dependency>
+            <dependency><groupId>com.google.auto.value</groupId><artifactId>auto-value-annotations</artifactId><version>${auto-value.version}</version></dependency>
+
             <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>retrofit</artifactId><version>${retrofit2.version}</version></dependency>
             <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>adapter-rxjava2</artifactId><version>${retrofit2.version}</version></dependency>
             <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>converter-jackson</artifactId><version>${retrofit2.version}</version></dependency>
@@ -54,6 +58,28 @@
             <dependency><groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><version>${javax.el-api.version}</version></dependency>
 
             <dependency><groupId>me.xdrop</groupId><artifactId>fuzzywuzzy</artifactId><version>${fuzzywuzzy.version}</version></dependency>
+
+            <dependency><groupId>org.immutables</groupId><artifactId>annotate</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>builder</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>encode</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>func</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>generator</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>generator-fixture</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>generator-processor</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>gson</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>metainf</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>mirror</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>mongo</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>ordinal</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>serial</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>testing</artifactId><version>${immutables.version}</version><scope>test</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>trees</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>value</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>value-fixture</artifactId><version>${immutables.version}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>value-processor</artifactId><version>${immutables.version}</version><scope>test</scope></dependency>
+
+            <!-- see: https://github.com/google/FreeBuilder -->
+            <dependency><groupId>org.inferred</groupId><artifactId>freebuilder</artifactId><version>${freebuilder.version}</version></dependency>
 
             <dependency>
                 <groupId>org.testcontainers</groupId>
@@ -87,8 +113,11 @@
     <!-- @formatter:on -->
 
     <properties>
+        <auto-value.version>1.6.2</auto-value.version>
         <com.google.code.findbugs.annotations.version>3.0.1u2</com.google.code.findbugs.annotations.version>
+        <freebuilder.version>1.14.9</freebuilder.version>
         <fuzzywuzzy.version>1.1.9</fuzzywuzzy.version>
+        <immutables.version>2.6.3</immutables.version>
         <javax.el-api.version>2.2.5</javax.el-api.version>
         <!--<javax.el-api.version>3.0.0</javax.el-api.version>-->
         <jaxb-api.version>2.3.0</jaxb-api.version>
