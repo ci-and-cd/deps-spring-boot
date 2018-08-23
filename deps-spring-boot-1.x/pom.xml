@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot</artifactId>
-        <version>0.1.2</version>
+        <version>0.1.5</version>
     </parent>
 
     <artifactId>deps-spring-boot-1.x</artifactId>
@@ -61,10 +61,8 @@
                 <!-- third-party -->
                 <aspectj.version>1.8.13</aspectj.version>
                 <gson-jodatime-serialisers.version>1.6.0</gson-jodatime-serialisers.version>
-                <auto-value.version>1.5</auto-value.version>
                 <disruptor.version>3.3.6</disruptor.version>
                 <hikaricp.version>2.4.6</hikaricp.version>
-                <freebuilder.version>1.14.4</freebuilder.version>
                 <jjwt.version>0.9.0</jjwt.version>
 
                 <!-- third-party (potential risk of conflicts) -->
@@ -192,8 +190,6 @@
                     <dependency><groupId>com.fasterxml.jackson.datatype</groupId><artifactId>jackson-datatype-joda</artifactId><version>${jackson.version}</version></dependency>
                     <dependency><groupId>com.fasterxml.jackson.module</groupId><artifactId>jackson-module-jaxb-annotations</artifactId><version>${jackson.version}</version></dependency>
                     <dependency><groupId>com.fatboyindustrial.gson-jodatime-serialisers</groupId><artifactId>gson-jodatime-serialisers</artifactId><version>${gson-jodatime-serialisers.version}</version></dependency>
-                    <!-- see: https://github.com/google/auto/tree/master/value -->
-                    <dependency><groupId>com.google.auto.value</groupId><artifactId>auto-value</artifactId><version>${auto-value.version}</version></dependency>
                     <dependency><groupId>com.google.guava</groupId><artifactId>guava</artifactId><version>${guava.version}</version></dependency>
 
                     <dependency><groupId>com.lmax</groupId><artifactId>disruptor</artifactId><version>${disruptor.version}</version></dependency>
@@ -224,8 +220,6 @@
 
                     <dependency><groupId>org.hibernate.javax.persistence</groupId><artifactId>hibernate-jpa-2.1-api</artifactId><version>${hibernate-jpa-2.1-api.version}</version></dependency>
 
-                    <!-- see: https://github.com/google/FreeBuilder -->
-                    <dependency><groupId>org.inferred</groupId><artifactId>freebuilder</artifactId><version>${freebuilder.version}</version></dependency>
                     <dependency><groupId>org.jadira.usertype</groupId><artifactId>usertype.core</artifactId><version>${usertype.version}</version></dependency>
                     <dependency><groupId>org.javassist</groupId><artifactId>javassist</artifactId><version>${javassist.version}</version></dependency>
                     <dependency><groupId>org.projectlombok</groupId><artifactId>lombok</artifactId><version>${lombok.version}</version></dependency>
