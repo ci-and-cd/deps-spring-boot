@@ -1,11 +1,24 @@
 # deps-spring-boot
 
 [![Sonar](https://sonarcloud.io/api/project_badges/measure?project=cn.home1%3Adeps-spring-boot&metric=alert_status)](https://sonarcloud.io/dashboard?id=cn.home1%3Adeps-spring-boot)  
+
 [Maven Site release (github.io)](https://ci-and-cd.github.io/ci-and-cd/release/deps-spring-boot/index.html)  
-[Maven site snapshot (infra.top)](https://maven-site.infra.top/ci-and-cd/maven-build/snapshot/staging/deps-spring-boot/index.html)  
-[Source Repository](https://github.com/ci-and-cd/deps-spring-boot/tree/develop)  
-[![Build Status](https://travis-ci.org/ci-and-cd/deps-spring-boot.svg?branch=develop)travis-ci](https://travis-ci.org/ci-and-cd/deps-spring-boot)  
+[Maven site snapshot (infra.top)](https://maven-site.infra.top/snapshot/staging/maven-build/deps-spring-boot/index.html)  
+
+[Artifacts (release)](https://oss.sonatype.org/content/repositories/releases/cn/home1/deps-spring-boot/)  
+[Artifacts (snapshot)](https://oss.sonatype.org/content/repositories/snapshots/cn/home1/deps-spring-boot/)  
+
+[Source Repository (github)](https://github.com/ci-and-cd/deps-spring-boot/tree/develop)  
+[Source Repository (gitlab)](https://gitlab.com/ci-and-cd/deps-spring-boot/tree/develop)  
+
+[CI (gitlab-ci)](https://gitlab.com/ci-and-cd/deps-spring-boot/pipelines)  
+[![pipeline status](https://gitlab.com/ci-and-cd/deps-spring-boot/badges/develop/pipeline.svg)](https://gitlab.com/ci-and-cd/deps-spring-boot/commits/develop)  
+
+[CI (appveyor)](https://ci.appveyor.com/project/chshawkn/deps-spring-boot)  
 [![Build status](https://ci.appveyor.com/api/projects/status/08er85vpj4qk9g9u?svg=true)appveyor](https://ci.appveyor.com/project/chshawkn/deps-spring-boot)  
+
+[CI (travis-ci)](https://travis-ci.org/ci-and-cd/deps-spring-boot)  
+[![Build Status](https://travis-ci.org/ci-and-cd/deps-spring-boot.svg?branch=develop)travis-ci](https://travis-ci.org/ci-and-cd/deps-spring-boot)  
 
 
 Dependency management for spring-boot, spring-data, spring-cloud
