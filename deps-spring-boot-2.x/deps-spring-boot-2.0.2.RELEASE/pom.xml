@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot-2.x</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.2</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.0.2.RELEASE</artifactId>
