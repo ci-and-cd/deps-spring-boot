@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>maven-build</artifactId>
-        <version>0.3.5</version>
+        <version>0.3.6</version>
     </parent>
 
     <artifactId>deps-spring-boot</artifactId>
@@ -15,7 +15,7 @@
     <name>deps-spring-boot</name>
     <packaging>pom</packaging>
     <url>https://github.com/ci-and-cd/deps-spring-boot</url>
-    <version>0.2.2</version>
+    <version>0.2.3</version>
 
     <!-- @formatter:off -->
     <ciManagement><system>Travis CI</system><url>https://travis-ci.org/ci-and-cd/deps-spring-boot</url></ciManagement>
