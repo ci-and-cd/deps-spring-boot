@@ -29,6 +29,18 @@ Dependency management for spring-boot, spring-data, spring-cloud
 [github /spring-projects/spring-boot/spring-boot-dependencies/](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-dependencies/pom.xml)  
 [mvnrepository Spring Boot Dependencies](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies)  
 
+- 2.0.6.RELEASE (org.springframework:spring-core:5.0.10.RELEASE)
+```text
+io.spring.platform:platform-bom:Cairo-SR5
+org.springframework.data:spring-data-releasetrain:Kay-SR7
+org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2
+org.springframework.batch:spring-batch-core:4.0.1.RELEASE
+org.springframework.integration:spring-integration-core:5.1.0.RELEASE
+org.springframework.session:spring-session:2.1.1.RELEASE
+org.springframework.statemachine:spring-statemachine-bom:2.0.3.RELEASE
+...
+```
+
 - 2.0.2.RELEASE (org.springframework:spring-core:5.0.6.RELEASE)
 ```text
 io.spring.platform:platform-bom:Cairo-SR1
@@ -166,6 +178,13 @@ spring-cloud-build(parent directory)/spring-cloud-dependencies-parent -> spring-
 [mvnrepository Spring Cloud Commons Dependencies](http://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-commons-dependencies)  
 [maven milestone](http://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-commons-dependencies/)  
 
+- Finchley.SR2 (org.springframework:spring-core:5.0.10.RELEASE)
+```text
+org.springframework.boot:spring-boot:2.0.6.RELEASE
+org.springframework.data:spring-data-releasetrain:Kay-SR6
+...
+```
+
 - Finchley.RC1 (org.springframework:spring-core:5.0.5.RELEASE)
 ```text
 org.springframework.boot:spring-boot:2.0.1.RELEASE
@@ -188,7 +207,32 @@ org.springframework.data:spring-data-releasetrain:Ingalls-SR10
 [mvnrepository Spring IO Platform Bill of Materials](http://mvnrepository.com/artifact/io.spring.platform/platform-bom)  
 
 [Brussels-SR10 reference](https://docs.spring.io/platform/docs/Brussels-SR10/reference/htmlsingle/)  
-[Brussels-SR9 reference](https://docs.spring.io/platform/docs/Brussels-SR9/reference/htmlsingle/)  
+[Brussels-SR9 reference](https://docs.spring.io/platform/docs/Brussels-SR9/reference/htmlsingle/)
+
+- Cairo-SR5 (org.springframework:spring-core:5.0.10.RELEASE)
+```text
+ch.qos.logback:logback-classic:1.2.3
+com.fasterxml:classmate:1.3.4
+com.fasterxml.jackson.core:jackson-databind:2.9.7
+com.google.guava:guava:20.0
+commons-io:commons-io:2.6
+io.netty:netty-all:4.1.29.Final
+javax.el:javax.el-api:3.0.1-b06
+javax.servlet:javax.servlet-api:3.1.0
+joda-time:joda-time:2.9.9
+mysql:mysql-connector-java:5.1.47
+org.apache.commons:commons-lang3:3.7
+org.apache.curator:curator-recipes:2.12.0
+org.apache.logging.log4j:log4j-core:2.10.0
+org.hibernate:hibernate-validator:6.0.13.Final
+org.javassist:javassist:[N/A]
+org.mariadb.jdbc:mariadb-java-client:2.2.6
+org.mockito:mockito-core:2.15.0
+org.objenesis:objenesis:2.6
+org.projectlombok:lombok:1.16.22
+org.slf4j:slf4j-api:1.7.25
+...
+```  
 
 - Cairo-SR1 (org.springframework:spring-core:5.0.6.RELEASE)
 ```text
