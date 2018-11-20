@@ -18,6 +18,7 @@
     <modules>
         <module>deps-spring-boot-2.0.2.RELEASE</module>
         <module>deps-spring-boot-2.0.3.RELEASE</module>
+        <module>deps-spring-boot-2.0.6.RELEASE</module>
     </modules>
 
     <properties>
@@ -33,36 +34,35 @@
             </activation>
             <properties>
                 <!-- org.springframework.boot:spring-boot-dependencies -->
-                <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+                <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
                 <!-- org.springframework.data:spring-data-releasetrain -->
-                <spring-data-releasetrain.version>Kay-SR8</spring-data-releasetrain.version>
+                <spring-data-releasetrain.version>Fowler-SR2</spring-data-releasetrain.version>
                 <!-- io.spring.platform:platform-bom -->
                 <spring-io-platform.version>Cairo-SR2</spring-io-platform.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
-                <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
-                <spring-mobile.version>1.1.5.RELEASE</spring-mobile.version>
-                <spring-integration.version>5.0.6.RELEASE</spring-integration.version>
-                <spring-integration-kafka.version>3.0.3.RELEASE</spring-integration-kafka.version>
-                <spring-session.version>Apple-SR3</spring-session.version>
-                <spring-statemachine.version>2.0.2.RELEASE</spring-statemachine.version>
+                <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+                <spring-mobile.version>2.0.0.M3</spring-mobile.version>
+
+                <spring-integration.version>5.1.0.RELEASE</spring-integration.version>
+                <spring-integration-kafka.version>3.1.0.RELEASE</spring-integration-kafka.version>
+                <spring-session.version>Bean-RELEASE</spring-session.version>
+                <spring-statemachine.version>2.0.3.RELEASE</spring-statemachine.version>
 
                 <!-- org.springframework.boot:spring-boot-dependencies -->
                 <aspectj.version>1.8.13</aspectj.version>
                 <commons-lang3.version>3.7</commons-lang3.version>
-                <log4j2.version>2.11.0</log4j2.version>
+                <log4j2.version>2.10.0</log4j2.version>
                 <!-- io.spring.platform:platform-bom -->
-                <bouncycastle.version>1.59</bouncycastle.version>
+                <bouncycastle.version>1.60</bouncycastle.version>
                 <hibernate-jpa-2.1-api.version>1.0.0.Final</hibernate-jpa-2.1-api.version>
-                <jackson.version>2.9.6</jackson.version>
+                <jackson.version>2.9.7</jackson.version>
                 <jackson1.version>1.9.13</jackson1.version>
-                <lombok.version>1.18.2</lombok.version>
+                <lombok.version>1.18.4</lombok.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
-                <!--<netty.version>4.1.24.Final</netty.version>-->
 
                 <!-- third-party -->
                 <gson-jodatime-serialisers.version>1.6.0</gson-jodatime-serialisers.version>
                 <disruptor.version>3.3.7</disruptor.version>
-                <hikaricp.version>2.7.9</hikaricp.version>
                 <jjwt.version>0.9.1</jjwt.version>
 
                 <!-- third-party (potential risk of conflicts) -->
@@ -79,7 +79,7 @@
                 <!-- note: org.javassist:javassist version -->
                 <javassist.version>3.23.1-GA</javassist.version>
                 <!-- note: classmate version -->
-                <springfox-swagger.version>2.9.2</springfox-swagger.version>
+                <springfox-swagger.version>3.11.0</springfox-swagger.version>
                 <swagger.version>1.5.20</swagger.version>
                 <!-- conflict: spring-io-platform & orika-core -->
                 <orika.version>1.5.2</orika.version>
@@ -90,41 +90,10 @@
             </properties>
             <dependencyManagement>
                 <dependencies>
-                    <!--<dependency>-->
-                        <!--<groupId>io.netty</groupId>-->
-                        <!--<artifactId>netty-bom</artifactId>-->
-                        <!--<version>${netty.version}</version>-->
-                        <!--<scope>import</scope>-->
-                        <!--<type>pom</type>-->
-                    <!--</dependency>-->
-                    <dependency>
-                        <groupId>io.spring.platform</groupId>
-                        <artifactId>platform-bom</artifactId>
-                        <version>${spring-io-platform.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-dependencies</artifactId>
-                        <version>${spring-boot.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.springframework.data</groupId>
-                        <artifactId>spring-data-releasetrain</artifactId>
-                        <version>${spring-data-releasetrain.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.springframework.cloud</groupId>
-                        <artifactId>spring-cloud-dependencies</artifactId>
-                        <version>${spring-cloud.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
+                    <dependency><groupId>io.spring.platform</groupId><artifactId>platform-bom</artifactId><version>${spring-io-platform.version}</version><type>pom</type><scope>import</scope></dependency>
+                    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-dependencies</artifactId><version>${spring-boot.version}</version><type>pom</type><scope>import</scope></dependency>
+                    <dependency><groupId>org.springframework.data</groupId><artifactId>spring-data-releasetrain</artifactId><version>${spring-data-releasetrain.version}</version><type>pom</type><scope>import</scope></dependency>
+                    <dependency><groupId>org.springframework.cloud</groupId><artifactId>spring-cloud-dependencies</artifactId><version>${spring-cloud.version}</version><type>pom</type><scope>import</scope></dependency>
 
                     <!-- For this to work, you must go to: Preferences->Editor->Code Style->Formatter Control and check Enable formatter markers in comments -->
                     <!-- @formatter:off -->
@@ -157,29 +126,11 @@
 
                     <dependency><groupId>org.springframework.integration</groupId><artifactId>spring-integration-bom</artifactId><version>${spring-integration.version}</version></dependency>
                     <dependency><groupId>org.springframework.integration</groupId><artifactId>spring-integration-kafka</artifactId><version>${spring-integration-kafka.version}</version></dependency>
-                    <!--
-                    org.springframework.integration:spring-integration-java-dsl
-                    org.springframework.integration:spring-integration-aws
-                    org.springframework.integration:spring-integration-smb
-                    org.springframework.integration:spring-integration-zip
-                    org.springframework.integration:org.springframework.integration.event
-                    org.springframework.integration:spring-integration-hazelcast
-                    -->
                     <dependency><groupId>org.springframework.session</groupId><artifactId>spring-session-bom</artifactId><version>${spring-session.version}</version><type>pom</type><scope>import</scope></dependency>
                     <dependency><groupId>org.springframework.statemachine</groupId><artifactId>spring-statemachine-bom</artifactId><version>${spring-statemachine.version}</version><type>pom</type><scope>import</scope></dependency>
 
-
-
-
-
-
-
-
-
-
-
-
-
+                    <dependency><groupId>org.aspectj</groupId><artifactId>aspectjweaver</artifactId><version>${aspectj.version}</version></dependency>
+                    <dependency><groupId>org.aspectj</groupId><artifactId>aspectjrt</artifactId><version>${aspectj.version}</version></dependency>
                     <dependency><groupId>commons-validator</groupId><artifactId>commons-validator</artifactId><version>${commons-validator.version}</version></dependency>
 
                     <dependency><groupId>com.fasterxml</groupId><artifactId>classmate</artifactId><version>${classmate.version}</version></dependency>
@@ -193,7 +144,6 @@
                     <dependency><groupId>com.google.guava</groupId><artifactId>guava</artifactId><version>${guava.version}</version></dependency>
 
                     <dependency><groupId>com.lmax</groupId><artifactId>disruptor</artifactId><version>${disruptor.version}</version></dependency>
-                    <dependency><groupId>com.zaxxer</groupId><artifactId>HikariCP</artifactId><version>${hikaricp.version}</version></dependency>
 
                     <dependency><groupId>org.apache.commons</groupId><artifactId>commons-collections4</artifactId><version>${commons-collections4.version}</version></dependency>
                     <dependency><groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>${commons-lang3.version}</version></dependency>
