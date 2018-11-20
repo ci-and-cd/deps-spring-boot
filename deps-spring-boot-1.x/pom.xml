@@ -293,7 +293,14 @@
                     <dependency><groupId>com.itextpdf</groupId><artifactId>itextpdf</artifactId><scope>provided</scope><version>${itextpdf.version}</version></dependency>
                     <dependency><groupId>com.itextpdf</groupId><artifactId>html2pdf</artifactId><scope>provided</scope><version>${html2pdf.version}</version></dependency>
 
-                    <dependency><groupId>com.alibaba</groupId><artifactId>druid</artifactId><version>${druid.version}</version></dependency>
+                    <!-- exclude system scope dependencies -->
+                    <dependency>
+                        <groupId>com.alibaba</groupId><artifactId>druid</artifactId><version>${druid.version}</version>
+                        <exclusions>
+                            <exclusion><artifactId>jconsole</artifactId><groupId>com.alibaba</groupId></exclusion>
+                            <exclusion><artifactId>tools</artifactId><groupId>com.alibaba</groupId></exclusion>
+                        </exclusions>
+                    </dependency>
                     <dependency><groupId>com.alibaba</groupId><artifactId>fastjson</artifactId><version>${fastjson.version}</version></dependency>
 
                     <dependency><groupId>com.ibeetl</groupId><artifactId>beetl</artifactId><version>${beetl.version}</version></dependency>
