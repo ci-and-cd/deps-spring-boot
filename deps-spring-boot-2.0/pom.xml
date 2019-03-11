@@ -7,17 +7,15 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot</artifactId>
-        <version>0.3.4-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>deps-spring-boot-2.x</artifactId>
-    <description>Dependency management for spring-boot (2.x), spring-data, spring-cloud</description>
-    <name>deps-spring-boot-2.x</name>
+    <artifactId>deps-spring-boot-2.0</artifactId>
+    <description>Dependency management for spring-boot (2.0), spring-data, spring-cloud</description>
+    <name>deps-spring-boot-2.0</name>
     <packaging>pom</packaging>
 
     <modules>
-        <module>deps-spring-boot-2.0.2.RELEASE</module>
-        <module>deps-spring-boot-2.0.3.RELEASE</module>
         <module>deps-spring-boot-2.0.6.RELEASE</module>
     </modules>
 
@@ -40,7 +38,7 @@
                 <!-- io.spring.platform:platform-bom -->
                 <spring-io-platform.version>Cairo-SR5</spring-io-platform.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
-                <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+                <spring-cloud.version>Finchley.SR3</spring-cloud.version>
                 <spring-mobile.version>2.0.0.M3</spring-mobile.version>
 
                 <spring-integration.version>5.0.9.RELEASE</spring-integration.version>
@@ -57,7 +55,7 @@
                 <hibernate-jpa-2.1-api.version>1.0.2.Final</hibernate-jpa-2.1-api.version>
                 <jackson.version>2.9.7</jackson.version>
                 <jackson1.version>1.9.13</jackson1.version>
-                <lombok.version>1.18.4</lombok.version>
+                <lombok.version>1.18.6</lombok.version>
                 <!-- org.springframework.cloud:spring-cloud-dependencies -->
 
                 <!-- third-party -->
@@ -79,7 +77,7 @@
                 <!-- note: org.javassist:javassist version -->
                 <javassist.version>3.23.1-GA</javassist.version>
                 <!-- note: classmate version -->
-                <springfox-swagger.version>3.11.0</springfox-swagger.version>
+                <springfox-swagger.version>2.9.2</springfox-swagger.version>
                 <swagger.version>1.5.20</swagger.version>
                 <!-- conflict: spring-io-platform & orika-core -->
                 <orika.version>1.5.2</orika.version>
@@ -94,6 +92,17 @@
                     <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-dependencies</artifactId><version>${spring-boot.version}</version><type>pom</type><scope>import</scope></dependency>
                     <dependency><groupId>org.springframework.data</groupId><artifactId>spring-data-releasetrain</artifactId><version>${spring-data-releasetrain.version}</version><type>pom</type><scope>import</scope></dependency>
                     <dependency><groupId>org.springframework.cloud</groupId><artifactId>spring-cloud-dependencies</artifactId><version>${spring-cloud.version}</version><type>pom</type><scope>import</scope></dependency>
+                    <dependency><groupId>org.springframework.session</groupId><artifactId>spring-session-bom</artifactId><version>${spring-session.version}</version><type>pom</type><scope>import</scope></dependency>
+                    <dependency><groupId>org.springframework.integration</groupId><artifactId>spring-integration-bom</artifactId><version>${spring-integration.version}</version><type>pom</type><scope>import</scope></dependency>
+                    <!--
+                    org.springframework.integration:spring-integration-java-dsl
+                    org.springframework.integration:spring-integration-aws
+                    org.springframework.integration:spring-integration-smb
+                    org.springframework.integration:spring-integration-zip
+                    org.springframework.integration:org.springframework.integration.event
+                    org.springframework.integration:spring-integration-hazelcast
+                    -->
+                    <dependency><groupId>org.springframework.statemachine</groupId><artifactId>spring-statemachine-bom</artifactId><version>${spring-statemachine.version}</version><type>pom</type><scope>import</scope></dependency>
 
                     <!-- For this to work, you must go to: Preferences->Editor->Code Style->Formatter Control and check Enable formatter markers in comments -->
                     <!-- @formatter:off -->
@@ -124,10 +133,7 @@
                     <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-mobile</artifactId><version>${spring-boot.version}</version></dependency>
                     <dependency><groupId>org.springframework.mobile</groupId><artifactId>spring-mobile-device</artifactId><version>${spring-mobile.version}</version></dependency>
 
-                    <dependency><groupId>org.springframework.integration</groupId><artifactId>spring-integration-bom</artifactId><version>${spring-integration.version}</version></dependency>
                     <dependency><groupId>org.springframework.integration</groupId><artifactId>spring-integration-kafka</artifactId><version>${spring-integration-kafka.version}</version></dependency>
-                    <dependency><groupId>org.springframework.session</groupId><artifactId>spring-session-bom</artifactId><version>${spring-session.version}</version><type>pom</type><scope>import</scope></dependency>
-                    <dependency><groupId>org.springframework.statemachine</groupId><artifactId>spring-statemachine-bom</artifactId><version>${spring-statemachine.version}</version><type>pom</type><scope>import</scope></dependency>
 
                     <dependency><groupId>org.aspectj</groupId><artifactId>aspectjweaver</artifactId><version>${aspectj.version}</version></dependency>
                     <dependency><groupId>org.aspectj</groupId><artifactId>aspectjrt</artifactId><version>${aspectj.version}</version></dependency>
