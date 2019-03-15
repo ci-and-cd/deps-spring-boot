@@ -5,8 +5,8 @@
 
     <parent>
         <groupId>cn.home1</groupId>
-        <artifactId>deps-spring-boot-2.x</artifactId>
-        <version>0.3.3</version>
+        <artifactId>deps-spring-boot-2.0</artifactId>
+        <version>2.0.0</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.0.6.RELEASE</artifactId>
@@ -23,7 +23,8 @@
         <spring-io-platform.version>Cairo-SR5</spring-io-platform.version>
         <!-- org.springframework.cloud:spring-cloud-dependencies -->
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
-        <spring-mobile.version>2.0.0.M3</spring-mobile.version>
+        <spring-mobile.version>1.1.5.RELEASE</spring-mobile.version>
+
         <spring-integration.version>5.0.9.RELEASE</spring-integration.version>
         <spring-integration-kafka.version>3.1.0.RELEASE</spring-integration-kafka.version>
         <spring-session.version>Bean-RELEASE</spring-session.version>
