@@ -71,7 +71,20 @@
             <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>adapter-rxjava2</artifactId><version>${retrofit2.version}</version></dependency>
             <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>converter-jackson</artifactId><version>${retrofit2.version}</version></dependency>
 
+            <!-- see: https://dzone.com/articles/apis-to-be-removed-from-java-11 -->
+            <!-- java.activation -->
+            <dependency><groupId>javax.activation</groupId><artifactId>activation</artifactId><version>${javax.activation.version}</version></dependency>
+            <!-- java.transaction -->
+            <!--<dependency><groupId>javax.transaction</groupId><artifactId>javax.transaction-api</artifactId><version>${javax.transaction-api.version}</version></dependency>-->
+            <!-- Hibernate java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException -->
+            <!-- java.xml.bind -->
             <dependency><groupId>javax.xml.bind</groupId><artifactId>jaxb-api</artifactId><version>${jaxb-api.version}</version></dependency>
+            <dependency><groupId>com.sun.xml.bind</groupId><artifactId>jaxb-core</artifactId><version>${jaxb-api.version}</version></dependency>
+            <dependency><groupId>com.sun.xml.bind</groupId><artifactId>jaxb-impl</artifactId><version>${jaxb-api.version}</version></dependency>
+            <!-- java.xml.ws -->
+            <dependency><groupId>javax.annotation</groupId><artifactId>javax.annotation-api</artifactId><version>${javax.annotation-api.version}</version></dependency>
+            <dependency><groupId>javax.xml.ws</groupId><artifactId>jaxws-api</artifactId><version>${jaxws-api.version}</version></dependency>
+
             <!--<dependency><groupId>javax.el</groupId><artifactId>el-api</artifactId><version>2.2</version></dependency>-->
             <dependency><groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><version>${javax.el-api.version}</version></dependency>
 
@@ -139,9 +152,13 @@
         <freebuilder.version>1.14.9</freebuilder.version>
         <fuzzywuzzy.version>1.1.9</fuzzywuzzy.version>
         <immutables.version>2.6.3</immutables.version>
+        <javax.activation.version>1.1.1</javax.activation.version>
+        <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
         <javax.el-api.version>2.2.5</javax.el-api.version>
         <!--<javax.el-api.version>3.0.0</javax.el-api.version>-->
+        <javax.transaction-api.version>1.3</javax.transaction-api.version>
         <jaxb-api.version>2.3.0</jaxb-api.version>
+        <jaxws-api.version>2.3.0</jaxws-api.version>
         <retrofit2.version>2.4.0</retrofit2.version>
         <testcontainers.version>1.8.2</testcontainers.version>
     </properties>
