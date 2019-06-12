@@ -374,5 +374,5 @@ org.slf4j:slf4j-api:1.7.25
 # VI. Build this project
 
 ```bash
-JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home" mvn help:active-profiles clean install
+CI_OPT_INFRASTRUCTURE="opensource" JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home" ./mvnw help:active-profiles clean install
 ```
