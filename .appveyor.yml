@@ -25,6 +25,10 @@ environment:
 
   CI_OPT_MVN_DEPLOY_PUBLISH_SEGREGATION: false
 
+#  CI_OPT_DOCKER_REGISTRY_PASS:
+#    secure:
+#  CI_OPT_DOCKER_REGISTRY_USER:
+#    secure:
   CI_OPT_GPG_PASSPHRASE:
     secure: 9W3TKuaDpCwfEF8yNbbbNCaelmjnZqHdxUqfITdKTWM=
   CI_OPT_MAVEN_CENTRAL_PASS:
@@ -66,8 +70,6 @@ install:
   - sh: |
       export APPVEYOR_ENABLED="${APPVEYOR_ENABLED:-true}";
       if [[ "${CI_OPT_FAST}" != "true" ]]; then export CI_OPT_MAVEN_EFFECTIVE_POM="${CI_OPT_MAVEN_EFFECTIVE_POM:-false}"; fi;
-      if [[ "${CI_OPT_FAST}" != "true" ]]; then export CI_OPT_SITE="${CI_OPT_SITE:-true}"; fi;
-      if [[ "${CI_OPT_FAST}" != "true" ]]; then export CI_OPT_SONAR="${CI_OPT_SONAR:-true}"; fi;
       #export CI_OPT_CI_SCRIPT="${CI_OPT_GIT_PREFIX}/${APPVEYOR_REPO_NAME}/raw/${APPVEYOR_REPO_BRANCH}/src/main/ci-script/lib_ci.sh";
   - sh: |
       if [[ -z ${CI_OPT_GITHUB_SITE_PUBLISH} ]]; then
@@ -96,7 +98,7 @@ install:
 #      du -sh /home/appveyor/.m2/repository;
 #      ls -ahl /home/appveyor/.m2/repository/;
   - sh: |
-      if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:TieredStopAtLevel=1 -XX:+UseParallelGC -Dprofile -DprofileFormat=JSON,HTML"; fi;
+      if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:TieredStopAtLevel=1 -XX:+UseParallelGC -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
       ./mvnw -version;
       echo "download ${SETTINGS_GLOBAL_XML_URL} to ${SETTINGS_GLOBAL_XML}";
       curl -L "${SETTINGS_GLOBAL_XML_URL}" 2>/dev/null | dd of=${SETTINGS_GLOBAL_XML};
@@ -116,10 +118,6 @@ stack: jdk 8
 test_script:
   - sh: |
       if [[ "${APPVEYOR_ENABLED}" == "true" ]]; then
-        if [[ "${CI_OPT_GITHUB_SITE_PUBLISH}" == "true" ]]; then
-          time ./mvnw -e -ntp -U clean install sonar:sonar site deploy site-deploy;
-        else
-          time ./mvnw -e -ntp -U clean install sonar:sonar site deploy site:stage site:stage-deploy;
-        fi;
+        time CI_OPT_SONAR="true" ./mvnw -e -ntp -U clean deploy site-deploy;
         find .mvn/profilerReport -name "*.json" | xargs cat | jq -r '.projects[]|"module:", .project, "plugins", (.mojos[]|[.mojo,.time]|@tsv)' | column -t;
       fi;
