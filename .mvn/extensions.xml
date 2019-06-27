@@ -14,6 +14,6 @@ see:
     <extension>
         <groupId>top.infra</groupId>
         <artifactId>maven-build-extension</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1-newoptions-SNAPSHOT</version>
     </extension>
 </extensions>
