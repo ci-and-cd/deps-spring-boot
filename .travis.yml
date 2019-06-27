@@ -12,16 +12,16 @@ addons:
 before_install:
   - whois $(curl ipinfo.io/ip);
   # More options -> Settings -> Environment variables -> Add
-  # CI_OPT_DOCKER_REGISTRY_PASS
-  # CI_OPT_DOCKER_REGISTRY_USER
   # CI_OPT_GPG_PASSPHRASE
-  # CI_OPT_MAVEN_CENTRAL_PASS
-  # CI_OPT_MAVEN_CENTRAL_USER
-  # CI_OPT_OPENSOURCE_GIT_AUTH_TOKEN
-  # CI_OPT_OPENSOURCE_MVNSITE_PASSWORD
-  # CI_OPT_OPENSOURCE_MVNSITE_USERNAME
   # CI_OPT_ORIGIN_REPO_SLUG
-  # CI_OPT_SONAR_LOGIN
+  # CI_OPT_OSSRH_DOCKER_REGISTRY_PASS
+  # CI_OPT_OSSRH_DOCKER_REGISTRY_USER
+  # CI_OPT_OSSRH_GIT_AUTH_TOKEN
+  # CI_OPT_OSSRH_MVNSITE_PASSWORD
+  # CI_OPT_OSSRH_MVNSITE_USERNAME
+  # CI_OPT_OSSRH_NEXUS2_PASS
+  # CI_OPT_OSSRH_NEXUS2_USER
+  # CI_OPT_OSSRH_SONAR_LOGIN
   - source circ.sh
   - if [[ -d /usr/lib/jvm/java-8-openjdk-amd64 ]]; then sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /usr/lib/jvm/java-8-openjdk; fi;
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh;

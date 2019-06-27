@@ -1,11 +1,13 @@
 
-export CI_OPT_INFRASTRUCTURE="${CI_OPT_INFRASTRUCTURE:-opensource}";
+export CI_OPT_ORIGIN_REPO_SLUG="${CI_OPT_ORIGIN_REPO_SLUG:-ci-and-cd/deps-spring-boot}";
+
+export CI_OPT_OSSRH_SONAR_ORGANIZATION="${CI_OPT_OSSRH_SONAR_ORGANIZATION:-home1-oss-github}";
+
+export CI_OPT_INFRASTRUCTURE="${CI_OPT_INFRASTRUCTURE:-ossrh}";
 export CI_OPT_GIT_HOST="${CI_OPT_GIT_HOST:-gitlab.com}";
 if [[ -z "${CI_OPT_GIT_PREFIX}" ]]; then export CI_OPT_GIT_PREFIX="https://${CI_OPT_GIT_HOST}"; fi;
 export CI_OPT_GPG_KEYNAME="${CI_OPT_GPG_KEYNAME:-59DBF10E}";
 export CI_OPT_MVN_DEPLOY_PUBLISH_SEGREGATION="false";
-export CI_OPT_ORIGIN_REPO_SLUG="${CI_OPT_ORIGIN_REPO_SLUG:-ci-and-cd/deps-spring-boot}";
-export CI_OPT_SONAR_ORGANIZATION="${CI_OPT_SONAR_ORGANIZATION:-home1-oss-github}";
 
 if [[ -n "${APPVEYOR_REPO_BRANCH}" ]]; then export APPVEYOR_ENABLED="${APPVEYOR_ENABLED:-true}"; fi;
 if [[ -n "${CI_COMMIT_REF_NAME}" ]]; then export GITLAB_CI="${GITLAB_CI:-true}"; fi;
@@ -30,6 +32,10 @@ fi;
 
 if [[ -z "${CI_OPT_MAVEN_BUILD_OPTS_REPO}" ]]; then export CI_OPT_MAVEN_BUILD_OPTS_REPO="${CI_OPT_GIT_PREFIX}/ci-and-cd/maven-build-opts-${CI_OPT_INFRASTRUCTURE:-opensource}"; fi;
 export CI_OPT_MAVEN_BUILD_OPTS_REPO_REF="${CI_OPT_MAVEN_BUILD_OPTS_REPO_REF:-master}";
+
+
+
+
 if [[ "${APPVEYOR_ENABLED}" == "true" ]]; then export SETTINGS_GLOBAL_XML="${SETTINGS_GLOBAL_XML:-/home/appveyor/.m2/wrapper/dists/apache-maven-3.6.1-bin/38pn40mp89t5c94bjdbeod370m/apache-maven-3.6.1/conf/settings.xml}"; fi;
 #if [[ "${GITLAB_CI}" == "true" ]]; then export SETTINGS_GLOBAL_XML="${SETTINGS_GLOBAL_XML:-/var/lib/gitlab-runner/.m2/wrapper/dists/apache-maven-3.6.1-bin/38pn40mp89t5c94bjdbeod370m/apache-maven-3.6.1/conf/settings.xml}"; fi;
 if [[ "${GITLAB_CI}" == "true" ]]; then export SETTINGS_GLOBAL_XML="${SETTINGS_GLOBAL_XML:-/tmp/settings-global-${CI_COMMIT_SHA}.xml}"; fi;
