@@ -77,7 +77,9 @@ before_script:
   # CI_OPT_OSSRH_NEXUS2_PASS
   # CI_OPT_OSSRH_NEXUS2_USER
   # CI_OPT_OSSRH_SONAR_LOGIN
-  - source circ.sh;
+  - |
+    export CI_OPT_MVN_DEPLOY_PUBLISH_SEGREGATION="true";
+    source circ.sh;
   - |
     rm -rf ~/.m2/repository/top/infra/maven-build-extension;
     if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dprofile=title -DprofileFormat=JSON,HTML"; fi;

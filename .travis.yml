@@ -23,7 +23,8 @@ before_install:
   # CI_OPT_OSSRH_NEXUS2_PASS
   # CI_OPT_OSSRH_NEXUS2_USER
   # CI_OPT_OSSRH_SONAR_LOGIN
-  - source circ.sh
+  - export CI_OPT_MVN_DEPLOY_PUBLISH_SEGREGATION="false";
+    source circ.sh;
   - if [[ -d /usr/lib/jvm/java-8-openjdk-amd64 ]]; then sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 /usr/lib/jvm/java-8-openjdk; fi;
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh;
     bash install-jdk.sh -F 11 --target $HOME/openjdk11 --workspace $HOME/.cache/install-jdk;
