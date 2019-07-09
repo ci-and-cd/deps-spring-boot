@@ -42,12 +42,3 @@ fi;
 
 if [[ -z "${CI_OPT_MAVEN_BUILD_OPTS_REPO}" ]]; then export CI_OPT_MAVEN_BUILD_OPTS_REPO="${GIT_PREFIX}/ci-and-cd/maven-build-opts-${CI_OPT_INFRASTRUCTURE:-ossrh}"; fi;
 export CI_OPT_MAVEN_BUILD_OPTS_REPO_REF="${CI_OPT_MAVEN_BUILD_OPTS_REPO_REF:-master}";
-
-
-
-
-if [[ "${APPVEYOR_ENABLED}" == "true" ]]; then export SETTINGS_GLOBAL_XML="${SETTINGS_GLOBAL_XML:-/home/appveyor/.m2/wrapper/dists/apache-maven-3.6.1-bin/38pn40mp89t5c94bjdbeod370m/apache-maven-3.6.1/conf/settings.xml}"; fi;
-#if [[ "${GITLAB_CI}" == "true" ]]; then export SETTINGS_GLOBAL_XML="${SETTINGS_GLOBAL_XML:-/var/lib/gitlab-runner/.m2/wrapper/dists/apache-maven-3.6.1-bin/38pn40mp89t5c94bjdbeod370m/apache-maven-3.6.1/conf/settings.xml}"; fi;
-if [[ "${GITLAB_CI}" == "true" ]]; then export SETTINGS_GLOBAL_XML="${SETTINGS_GLOBAL_XML:-/tmp/settings-global-${CI_COMMIT_SHA}.xml}"; fi;
-if [[ "${TRAVIS_ENABLED}" == "true" ]]; then export SETTINGS_GLOBAL_XML="${SETTINGS_GLOBAL_XML:-/home/travis/.m2/wrapper/dists/apache-maven-3.6.1-bin/38pn40mp89t5c94bjdbeod370m/apache-maven-3.6.1/conf/settings.xml}"; fi;
-export SETTINGS_GLOBAL_XML_URL="${CI_OPT_MAVEN_BUILD_OPTS_REPO}/raw/${CI_OPT_MAVEN_BUILD_OPTS_REPO_REF}/src/main/maven/settings-global.xml";

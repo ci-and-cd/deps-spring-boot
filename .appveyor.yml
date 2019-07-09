@@ -73,13 +73,13 @@ install:
 #      sshpass -p "${RSYNC_PASSWORD}" rsync -r -a -v -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" rsync_user@infra.top:/restricted/rsync_user/m2_repository/ /home/appveyor/.m2/repository > /dev/null;
 #      du -sh /home/appveyor/.m2/repository;
 #      ls -ahl /home/appveyor/.m2/repository/;
+#  - sh: |
+#      export MAVEN_GLOBAL_SETTINGS="--global-settings ${SETTINGS_GLOBAL_XML}";
   - sh: |
       rm -rf ~/.m2/repository/top/infra/maven/maven-build-extension;
       if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
-      echo "download ${SETTINGS_GLOBAL_XML_URL} to ${SETTINGS_GLOBAL_XML}";
-      curl -L "${SETTINGS_GLOBAL_XML_URL}" 2>/dev/null | dd of=${SETTINGS_GLOBAL_XML}; cat ${SETTINGS_GLOBAL_XML};
       ls -ahl ~/.m2;
-      ./mvnw --global-settings "${SETTINGS_GLOBAL_XML}" -version;
+      ./mvnw ${MAVEN_GLOBAL_SETTINGS} -version;
 
 services:
   - docker
@@ -91,6 +91,6 @@ stack: jdk 8
 test_script:
   - sh: |
       if [[ "${APPVEYOR_ENABLED}" == "true" ]]; then
-        time CI_OPT_SONAR="true" ./mvnw --global-settings "${SETTINGS_GLOBAL_XML}" -e -ntp -U clean deploy site-deploy;
+        time CI_OPT_SONAR="true" ./mvnw ${MAVEN_GLOBAL_SETTINGS} -e -ntp -U clean deploy site-deploy;
         if type -p column > /dev/null; then find .mvn/profilerReport -name "*.json" | xargs cat | jq -r '.projects[]|"module:", .project, "plugins", (.mojos[]|[.mojo,.time]|@tsv)' | column -t; fi;
       fi;
