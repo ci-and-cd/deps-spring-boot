@@ -145,6 +145,8 @@
 
     <properties>
         <java.version>8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
         <version.auto-value>1.6.2</version.auto-value>
         <version.com.google.code.findbugs.annotations>3.0.1u2</version.com.google.code.findbugs.annotations>
