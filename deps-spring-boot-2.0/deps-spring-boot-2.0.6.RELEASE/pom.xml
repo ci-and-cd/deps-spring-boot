@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot-2.0</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.0.6.RELEASE</artifactId>
@@ -16,19 +16,19 @@
 
     <properties>
         <!-- org.springframework.boot:spring-boot-dependencies -->
-        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
+        <version.spring-boot>2.0.6.RELEASE</version.spring-boot>
         <!-- org.springframework.data:spring-data-releasetrain -->
-        <spring-data-releasetrain.version>Kay-SR7</spring-data-releasetrain.version>
+        <version.spring-data-releasetrain>Kay-SR7</version.spring-data-releasetrain>
         <!-- io.spring.platform:platform-bom -->
-        <spring-io-platform.version>Cairo-SR5</spring-io-platform.version>
+        <version.spring-io-platform>Cairo-SR5</version.spring-io-platform>
         <!-- org.springframework.cloud:spring-cloud-dependencies -->
-        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
-        <spring-mobile.version>1.1.5.RELEASE</spring-mobile.version>
+        <version.spring-cloud>Finchley.SR2</version.spring-cloud>
+        <version.spring-mobile>1.1.5.RELEASE</version.spring-mobile>
 
-        <spring-integration.version>5.0.9.RELEASE</spring-integration.version>
-        <spring-integration-kafka.version>3.1.0.RELEASE</spring-integration-kafka.version>
-        <spring-session.version>Bean-RELEASE</spring-session.version>
-        <spring-statemachine.version>2.0.3.RELEASE</spring-statemachine.version>
+        <version.spring-integration>5.0.9.RELEASE</version.spring-integration>
+        <version.spring-integration-kafka>3.1.0.RELEASE</version.spring-integration-kafka>
+        <version.spring-session>Bean-RELEASE</version.spring-session>
+        <version.spring-statemachine>2.0.3.RELEASE</version.spring-statemachine>
     </properties>
 
     <dependencyManagement>

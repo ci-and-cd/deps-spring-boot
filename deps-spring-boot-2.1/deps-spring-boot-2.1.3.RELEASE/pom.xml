@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>deps-spring-boot-2.1</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </parent>
 
     <artifactId>deps-spring-boot-2.1.3.RELEASE</artifactId>
@@ -16,19 +16,19 @@
 
     <properties>
         <!-- org.springframework.boot:spring-boot-dependencies -->
-        <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
+        <version.spring-boot>2.1.3.RELEASE</version.spring-boot>
         <!-- org.springframework.data:spring-data-releasetrain -->
-        <spring-data-releasetrain.version>Lovelace-SR5</spring-data-releasetrain.version>
+        <version.spring-data-releasetrain>Lovelace-SR5</version.spring-data-releasetrain>
 
 
         <!-- org.springframework.cloud:spring-cloud-dependencies -->
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <spring-mobile.version>1.1.5.RELEASE</spring-mobile.version>
+        <version.spring-cloud>Greenwich.SR1</version.spring-cloud>
+        <version.spring-mobile>1.1.5.RELEASE</version.spring-mobile>
 
-        <spring-integration.version>5.1.3.RELEASE</spring-integration.version>
-        <spring-integration-kafka.version>3.1.1.RELEASE</spring-integration-kafka.version>
-        <spring-session.version>Bean-SR3</spring-session.version>
-        <spring-statemachine.version>2.1.0.RELEASE</spring-statemachine.version>
+        <version.spring-integration>5.1.3.RELEASE</version.spring-integration>
+        <version.spring-integration-kafka>3.1.1.RELEASE</version.spring-integration-kafka>
+        <version.spring-session>Bean-SR3</version.spring-session>
+        <version.spring-statemachine>2.1.0.RELEASE</version.spring-statemachine>
     </properties>
 
     <dependencyManagement>

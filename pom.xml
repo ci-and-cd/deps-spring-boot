@@ -7,7 +7,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>maven-build</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </parent>
 
     <artifactId>deps-spring-boot</artifactId>
@@ -15,7 +15,7 @@
     <name>deps-spring-boot</name>
     <packaging>pom</packaging>
     <url>https://github.com/ci-and-cd/deps-spring-boot</url>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
 
     <!-- @formatter:off -->
     <ciManagement><system>Travis CI</system><url>https://travis-ci.org/ci-and-cd/deps-spring-boot</url></ciManagement>
@@ -41,50 +41,81 @@
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>annotations</artifactId>
-                <version>${com.google.code.findbugs.annotations.version}</version>
+                <version>${version.com.google.code.findbugs.annotations}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${version.com.google.code.findbugs.jsr305}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-annotations</artifactId>
+                <version>${version.spotbugs-annotations}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>net.jcip</groupId>
+                <artifactId>jcip-annotations</artifactId>
+                <version>${version.jcip-annotations}</version>
+                <optional>true</optional>
             </dependency>
 
             <!-- see: https://github.com/google/auto/tree/master/value -->
-            <dependency><groupId>com.google.auto.value</groupId><artifactId>auto-value</artifactId><version>${auto-value.version}</version></dependency>
-            <dependency><groupId>com.google.auto.value</groupId><artifactId>auto-value-annotations</artifactId><version>${auto-value.version}</version></dependency>
+            <dependency><groupId>com.google.auto.value</groupId><artifactId>auto-value</artifactId><version>${version.auto-value}</version></dependency>
+            <dependency><groupId>com.google.auto.value</groupId><artifactId>auto-value-annotations</artifactId><version>${version.auto-value}</version></dependency>
 
-            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>retrofit</artifactId><version>${retrofit2.version}</version></dependency>
-            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>adapter-rxjava2</artifactId><version>${retrofit2.version}</version></dependency>
-            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>converter-jackson</artifactId><version>${retrofit2.version}</version></dependency>
+            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>retrofit</artifactId><version>${version.retrofit2}</version></dependency>
+            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>adapter-rxjava2</artifactId><version>${version.retrofit2}</version></dependency>
+            <dependency><groupId>com.squareup.retrofit2</groupId><artifactId>converter-jackson</artifactId><version>${version.retrofit2}</version></dependency>
 
-            <dependency><groupId>javax.xml.bind</groupId><artifactId>jaxb-api</artifactId><version>${jaxb-api.version}</version></dependency>
+            <!-- see: https://dzone.com/articles/apis-to-be-removed-from-java-11 -->
+            <!-- java.activation -->
+            <dependency><groupId>javax.activation</groupId><artifactId>activation</artifactId><version>${version.javax.activation}</version></dependency>
+            <!-- java.transaction -->
+            <!--<dependency><groupId>javax.transaction</groupId><artifactId>javax.transaction-api</artifactId><version>${version.javax.transaction-api}</version></dependency>-->
+            <!-- Hibernate java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException -->
+            <!-- java.xml.bind -->
+            <dependency><groupId>javax.xml.bind</groupId><artifactId>jaxb-api</artifactId><version>${version.jaxb-api}</version></dependency>
+            <dependency><groupId>com.sun.xml.bind</groupId><artifactId>jaxb-core</artifactId><version>${version.jaxb-api}</version></dependency>
+            <dependency><groupId>com.sun.xml.bind</groupId><artifactId>jaxb-impl</artifactId><version>${version.jaxb-api}</version></dependency>
+            <!-- java.xml.ws -->
+            <dependency><groupId>javax.annotation</groupId><artifactId>javax.annotation-api</artifactId><version>${version.javax.annotation-api}</version></dependency>
+            <dependency><groupId>javax.xml.ws</groupId><artifactId>jaxws-api</artifactId><version>${version.jaxws-api}</version></dependency>
+
             <!--<dependency><groupId>javax.el</groupId><artifactId>el-api</artifactId><version>2.2</version></dependency>-->
-            <dependency><groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><version>${javax.el-api.version}</version></dependency>
+            <dependency><groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><version>${version.javax.el-api}</version></dependency>
 
-            <dependency><groupId>me.xdrop</groupId><artifactId>fuzzywuzzy</artifactId><version>${fuzzywuzzy.version}</version></dependency>
+            <dependency><groupId>me.xdrop</groupId><artifactId>fuzzywuzzy</artifactId><version>${version.fuzzywuzzy}</version></dependency>
 
-            <dependency><groupId>org.immutables</groupId><artifactId>annotate</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>builder</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>encode</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>func</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>generator</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>generator-fixture</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>generator-processor</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>gson</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>metainf</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>mirror</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>mongo</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>ordinal</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>serial</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>testing</artifactId><version>${immutables.version}</version><scope>test</scope></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>trees</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>value</artifactId><version>${immutables.version}</version><scope>provided</scope></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>value-fixture</artifactId><version>${immutables.version}</version></dependency>
-            <dependency><groupId>org.immutables</groupId><artifactId>value-processor</artifactId><version>${immutables.version}</version><scope>test</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>annotate</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>builder</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>encode</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>func</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>generator</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>generator-fixture</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>generator-processor</artifactId><version>${version.immutables}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>gson</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>metainf</artifactId><version>${version.immutables}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>mirror</artifactId><version>${version.immutables}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>mongo</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>ordinal</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>serial</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>testing</artifactId><version>${version.immutables}</version><scope>test</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>trees</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>value</artifactId><version>${version.immutables}</version><scope>provided</scope></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>value-fixture</artifactId><version>${version.immutables}</version></dependency>
+            <dependency><groupId>org.immutables</groupId><artifactId>value-processor</artifactId><version>${version.immutables}</version><scope>test</scope></dependency>
 
             <!-- see: https://github.com/google/FreeBuilder -->
-            <dependency><groupId>org.inferred</groupId><artifactId>freebuilder</artifactId><version>${freebuilder.version}</version></dependency>
+            <dependency><groupId>org.inferred</groupId><artifactId>freebuilder</artifactId><version>${version.freebuilder}</version></dependency>
 
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>testcontainers-bom</artifactId>
-                <version>${testcontainers.version}</version>
+                <version>${version.testcontainers}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -96,32 +127,43 @@
     <repositories>
         <!-- Make artifacts in OSSRH repositories available -->
         <repository>
-            <id>OSSRH-releases</id><name>central releases</name><url>https://oss.sonatype.org/content/repositories/releases/</url>
-            <releases><enabled>true</enabled><updatePolicy>${repositories.releases.updatePolicy}</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
+            <id>ossrh-releases</id><name>central releases</name><url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <releases><enabled>true</enabled><updatePolicy>never</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
         </repository>
         <repository>
-            <id>OSSRH-snapshots</id><name>central snapshots</name><url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>ossrh-snapshots</id><name>central snapshots</name><url>https://oss.sonatype.org/content/repositories/snapshots/</url>
             <releases><enabled>false</enabled></releases><snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>central</id><name>central</name><url>http://repo1.maven.org/maven2</url>
-            <releases><enabled>true</enabled><updatePolicy>${repositories.releases.updatePolicy}</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
+            <id>central</id><name>central</name><url>https://repo1.maven.org/maven2</url>
+            <releases><enabled>true</enabled><updatePolicy>never</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
     <!-- @formatter:on -->
 
     <properties>
-        <auto-value.version>1.6.2</auto-value.version>
-        <com.google.code.findbugs.annotations.version>3.0.1u2</com.google.code.findbugs.annotations.version>
-        <freebuilder.version>1.14.9</freebuilder.version>
-        <fuzzywuzzy.version>1.1.9</fuzzywuzzy.version>
-        <immutables.version>2.6.3</immutables.version>
-        <javax.el-api.version>2.2.5</javax.el-api.version>
-        <!--<javax.el-api.version>3.0.0</javax.el-api.version>-->
-        <jaxb-api.version>2.3.0</jaxb-api.version>
-        <retrofit2.version>2.4.0</retrofit2.version>
-        <testcontainers.version>1.8.2</testcontainers.version>
+        <java.version>8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <version.auto-value>1.6.2</version.auto-value>
+        <version.com.google.code.findbugs.annotations>3.0.1u2</version.com.google.code.findbugs.annotations>
+        <version.com.google.code.findbugs.jsr305>3.0.2</version.com.google.code.findbugs.jsr305>
+        <version.spotbugs-annotations>4.0.0-beta1</version.spotbugs-annotations>
+        <version.jcip-annotations>1.0</version.jcip-annotations>
+        <version.freebuilder>1.14.9</version.freebuilder>
+        <version.fuzzywuzzy>1.1.9</version.fuzzywuzzy>
+        <version.immutables>2.6.3</version.immutables>
+        <version.javax.activation>1.1.1</version.javax.activation>
+        <version.javax.annotation-api>1.3.2</version.javax.annotation-api>
+        <!--<version.javax.el-api>2.2.5</version.javax.el-api>-->
+        <version.javax.el-api>3.0.0</version.javax.el-api>
+        <version.javax.transaction-api>1.3</version.javax.transaction-api>
+        <version.jaxb-api>2.3.0</version.jaxb-api>
+        <version.jaxws-api>2.3.0</version.jaxws-api>
+        <version.retrofit2>2.4.0</version.retrofit2>
+        <version.testcontainers>1.8.2</version.testcontainers>
     </properties>
 </project>
