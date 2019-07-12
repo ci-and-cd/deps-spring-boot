@@ -127,11 +127,11 @@
     <repositories>
         <!-- Make artifacts in OSSRH repositories available -->
         <repository>
-            <id>ossrh-releases</id><name>central releases</name><url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <id>ossrh-nexus2-releases</id><name>ossrh nexus2 releases</name><url>https://oss.sonatype.org/content/repositories/releases/</url>
             <releases><enabled>true</enabled><updatePolicy>never</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
         </repository>
         <repository>
-            <id>ossrh-snapshots</id><name>central snapshots</name><url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>ossrh-nexus2-snapshots</id><name>ossrh nexus2 snapshots</name><url>https://oss.sonatype.org/content/repositories/snapshots/</url>
             <releases><enabled>false</enabled></releases><snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
