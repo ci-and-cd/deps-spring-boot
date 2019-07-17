@@ -76,7 +76,7 @@ install:
 #  - sh: |
 #      export MAVEN_GLOBAL_SETTINGS="--global-settings ${SETTINGS_GLOBAL_XML}";
   - sh: |
-      rm -rf ~/.m2/repository/top/infra/maven/maven-build-extension;
+      rm -rf ~/.m2/repository/top/infra/maven;
       if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
       ls -ahl ~/.m2;
       ./mvnw ${MAVEN_GLOBAL_SETTINGS} -version;
@@ -91,7 +91,7 @@ stack: jdk 8
 test_script:
   - sh: |
       if [[ "${APPVEYOR_ENABLED}" == "true" ]]; then
-        time CI_OPT_SONAR="true" ./mvnw ${MAVEN_GLOBAL_SETTINGS} -e -ntp -U clean deploy;
+        time CI_OPT_SONAR="true" ./mvnw ${MAVEN_GLOBAL_SETTINGS} -e -ntp -U clean deploy verify;
         if type -p column > /dev/null; then find .mvn/profiler-report -name "*.json" | xargs cat | jq -r '.projects[]|"module:", .project, "plugins", (.mojos[]|[.mojo,.time]|@tsv)' | column -t; fi; rm -rf .mvn/profiler-report;
 
         time CI_OPT_FAST="true" CI_OPT_INFRASTRUCTURE="custom" CI_OPT_MAVEN_PACKAGES_SKIP="true" CI_OPT_MVN_DEPLOY_PUBLISH_SEGREGATION="true" CI_OPT_NEXUS2_STAGING="false" ./mvnw ${MAVEN_GLOBAL_SETTINGS} -e -ntp -Dmaven.clean.skip=true -Dmaven.install.skip=true deploy;
