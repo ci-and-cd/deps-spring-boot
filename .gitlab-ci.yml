@@ -1,7 +1,10 @@
 # GIT_STRATEGY: none Clone manually as a resolution of https clone is not available, and runner can't do ssh clone automatically
 # Issue 3378 Uploading untracked artifacts includes ignored files, see: https://gitlab.com/gitlab-org/gitlab-runner/issues/3378
 # Issue 4072 artifacts ignore paths                              , see: https://gitlab.com/gitlab-org/gitlab-ce/issues/4072
-#image: openjdk:8
+
+image: cirepo/gitlab-runner:12.1.0-en_US.UTF-8_Etc.UTC-bionic
+services:
+  - docker:dind
 
 cache:
   key: ${CI_PROJECT_ID}
@@ -114,7 +117,7 @@ before_script:
   #- |
   #  export MAVEN_GLOBAL_SETTINGS="--global-settings ${SETTINGS_GLOBAL_XML}";
   - |
-    if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dmaven.repo.local=.m2/repository -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
+    if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
     if [[ -d ${HOME}/.m2 ]]; then rm -rf ${HOME}/.m2/repository/top/infra/maven; ls -ahl ${HOME}/.m2; fi;
     export MAVEN_USER_HOME="${PWD}/.m2";
     ./mvnw ${MAVEN_GLOBAL_SETTINGS} -version;
@@ -124,6 +127,10 @@ build_snapshots:
   <<: *script_build
   <<: *upload_files_for_latter_stages
   stage: build
+  tags:
+    - ossrh
+    - ci-and-cd
+    - docker
   variables:
     GIT_STRATEGY: fetch
 
@@ -131,7 +138,6 @@ analysis:
   dependencies:
     - build_snapshots
   <<: *git_refs_develop_only
-  stage: analysis
   script:
     - |
       if type -p zip > /dev/null && type -p unzip > /dev/null; then
@@ -142,6 +148,11 @@ analysis:
 
       time ./mvnw ${MAVEN_GLOBAL_SETTINGS} -e -ntp sonar:sonar;
       if type -p column > /dev/null; then find .mvn/profiler-report -name "*.json" | xargs cat | jq -r '.projects[]|"module:", .project, "plugins", (.mojos[]|[.mojo,.time]|@tsv)' | column -t; fi; rm -rf .mvn/profiler-report;
+  stage: analysis
+  tags:
+    - ossrh
+    - ci-and-cd
+    - docker
   variables:
     GIT_STRATEGY: fetch
 
@@ -152,6 +163,10 @@ publish_snapshots:
   <<: *script_publish
   <<: *upload_files_for_latter_stages
   stage: publish
+  tags:
+    - ossrh
+    - ci-and-cd
+    - docker
   variables:
     GIT_STRATEGY: fetch
 
@@ -161,6 +176,10 @@ site_snapshots:
   <<: *git_refs_develop_only
   <<: *script_site
   stage: site
+  tags:
+    - ossrh
+    - ci-and-cd
+    - docker
   variables:
     GIT_STRATEGY: fetch
 
@@ -169,6 +188,10 @@ build_releases:
   <<: *script_build
   <<: *upload_files_for_latter_stages
   stage: build
+  tags:
+    - ossrh
+    - ci-and-cd
+    - docker
   variables:
     GIT_STRATEGY: fetch
 
@@ -179,6 +202,10 @@ publish_releases:
   <<: *script_publish
   <<: *upload_files_for_latter_stages
   stage: publish
+  tags:
+    - ossrh
+    - ci-and-cd
+    - docker
   variables:
     GIT_STRATEGY: fetch
 
@@ -188,6 +215,10 @@ site_releases:
   <<: *git_refs_of_releases
   <<: *script_site
   stage: site
+  tags:
+    - ossrh
+    - ci-and-cd
+    - docker
   variables:
     GIT_STRATEGY: fetch
 
