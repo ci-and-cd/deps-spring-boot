@@ -137,7 +137,7 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>central</id><name>central</name><url>https://repo1.maven.org/maven2</url>
+            <id>central</id><name>Maven Central</name><url>https://repo1.maven.org/maven2/</url>
             <releases><enabled>true</enabled><updatePolicy>never</updatePolicy></releases><snapshots><enabled>false</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>

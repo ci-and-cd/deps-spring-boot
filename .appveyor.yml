@@ -47,6 +47,7 @@ environment:
   RSYNC_PASSWORD:
     secure: u1zNgVE8L//j/YW6mzcKbIgIegoqSYKPAfYAiMWEHds=
 
+
 image: Ubuntu1804
 
 #init:
@@ -54,9 +55,9 @@ image: Ubuntu1804
 install:
   - ls -ahl;
   - sh: |
-      sudo apt-get update > /dev/null;
-      sudo apt-get install -yq --no-install-suggests --no-install-recommends aria2 gnupg2 graphviz openssl rsync sshpass whois > /dev/null;
-  - whois $(curl ipinfo.io/ip);
+      sudo apt -y update > /dev/null;
+      sudo DEBIAN_FRONTEND=noninteractive apt -qq -y install aria2 gnupg2 graphviz openssl rsync sshpass whois --no-install-suggests --no-install-recommends;
+  #- whois $(curl ipinfo.io/ip);
   # Settings -> Environment -> Environment variables -> Add variable
   # CI_OPT_ORIGIN_REPO_SLUG
   - sh: |
@@ -76,7 +77,7 @@ install:
   #- sh: |
   #    export MAVEN_GLOBAL_SETTINGS="--global-settings ${SETTINGS_GLOBAL_XML}";
   - sh: |
-      if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dmaven.repo.local=.m2/repository -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
+      if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
       if [[ -d ${HOME}/.m2 ]]; then rm -rf ${HOME}/.m2/repository/top/infra/maven; ls -ahl ${HOME}/.m2; fi;
       export MAVEN_USER_HOME="${PWD}/.m2";
       ./mvnw ${MAVEN_GLOBAL_SETTINGS} -version;
