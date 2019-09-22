@@ -26,6 +26,7 @@ before_install:
   - if [[ -z "${MAVEN_OPTS}" ]]; then export MAVEN_OPTS="-XX:+UseParallelGC -Dprofile=title -DprofileFormat=JSON,HTML"; fi;
     if [[ -d ${HOME}/.m2 ]]; then rm -rf ${HOME}/.m2/repository/top/infra/maven; ls -ahl ${HOME}/.m2; fi;
     export MAVEN_USER_HOME="${PWD}/.m2";
+    rm -rf ${MAVEN_USER_HOME}/.ci-and-cd;
     ./mvnw ${MAVEN_GLOBAL_SETTINGS} -version;
   - if [[ -n "${MAVEN_USER_HOME}" ]] && [[ ! -d ${HOME}/.m2/repository ]]; then
       mkdir -p ${MAVEN_USER_HOME}/repository ${HOME}/.m2;

@@ -374,5 +374,11 @@ org.slf4j:slf4j-api:1.7.25
 # VI. Build this project
 
 ```bash
-CI_OPT_INFRASTRUCTURE="opensource" JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home" ./mvnw help:active-profiles clean install
+export CI_OPT_GIT_AUTH_TOKEN="your_token"
+export CI_OPT_MAVEN_BUILD_OPTS_REPO="https://raw.githubusercontent.com/chshawkn/maven-build-opts-cnhome1"
+export CI_OPT_MAVEN_BUILD_OPTS_REPO_REF="develop"
+#export CI_OPT_ORIGIN_REPO_SLUG="ci-and-cd/deps-spring-boot"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home" 
+source circ.sh
+./mvnw help:active-profiles clean install
 ```
